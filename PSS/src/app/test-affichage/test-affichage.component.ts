@@ -1,24 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { LatestMangaAPIENService } from '../latest-manga-api-en.service';
-import { RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router'; // Assurez-vous que vous importez Router depuis @angular/router
 import { CommonModule } from '@angular/common';
 
 interface mangaDisplay {
   name: string;
-  description : string;
+  description: string;
+  id: string;
 }
+
 @Component({
   selector: 'app-test-affichage',
-  standalone: true,
-  imports: [RouterOutlet, CommonModule],
   templateUrl: './test-affichage.component.html',
-  styleUrl: './test-affichage.component.scss'
+  styleUrls: ['./test-affichage.component.scss']
 })
 export class TestAffichageComponent implements OnInit {
-  mangaList: any[] | undefined;
   mangaListDisplay: mangaDisplay[] = [];
 
-  constructor(private latestMangaAPIENService: LatestMangaAPIENService) { }
+  constructor(
+    private latestMangaAPIENService: LatestMangaAPIENService,
+    private router: Router // Assurez-vous que vous importez Router correctement
+  ) { }
 
   ngOnInit(): void {
     this.loadMangaList();
@@ -27,24 +29,19 @@ export class TestAffichageComponent implements OnInit {
   loadMangaList(): void {
     this.latestMangaAPIENService.getLastMangaUpdated().subscribe(
       (data: any) => {
-        this.mangaList = data.data;
+        this.mangaListDisplay = data.data.map((manga: any) => ({
+          name: manga.attributes.title.en,
+          description: manga.attributes.description.en,
+          id: manga.id
+        }));
       },
       (error) => {
         console.log(error);
       }
     );
-    this.loadMangaData();
   }
 
-  loadMangaData():void {
-    let i = 0;
-    this.mangaList?.forEach(manga => {
-      const mangaData: mangaDisplay = {
-        name: manga.attributes.title.en, 
-        description: manga.attributes.description.en
-      };
-      this.mangaListDisplay[i] = mangaData;
-      i++;
-    });
+  onMangaClick(id: string): void {
+    this.router.navigate(['/listChapter']);
   }
 }
