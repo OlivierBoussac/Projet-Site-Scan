@@ -1,0 +1,10 @@
+<h2>Liste des chapitres</h2>
+<div>
+    <ul>
+        <li *ngFor="let item of chapters">
+            <a (click)="onChapterClick(item.id)">Chapitre : {{ item.number }}</a>
+            <br>
+            <br>
+        </li>
+    </ul>
+</div>

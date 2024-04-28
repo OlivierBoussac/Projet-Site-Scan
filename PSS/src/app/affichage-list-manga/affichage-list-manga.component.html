@@ -1,0 +1,14 @@
+<h2>Liste des mangas</h2>
+<div>
+    <ul>
+        <li *ngFor="let item of mangaListDisplay">
+            <a (click)="onMangaClick(item.id)">{{ item.name }}</a>
+            <br>
+            <br>
+            {{ item.description }}
+            <br>
+            <br>
+            <br>
+        </li>
+    </ul>
+</div>
