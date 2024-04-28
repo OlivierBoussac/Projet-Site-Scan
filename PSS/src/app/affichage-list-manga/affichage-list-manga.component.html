@@ -2,10 +2,9 @@
 <div>
     <ul>
         <li *ngFor="let item of mangaListDisplay">
-            <a routerLink="listChapter">{{ item.name }}</a>
+            <a (click)="onMangaClick(item.id)">{{ item.name }}</a>
             <br>
             <br>
-
             {{ item.description }}
             <br>
             <br>

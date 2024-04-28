@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LatestMangaAPIENService } from '../latest-manga-api-en.service';
-import { Router } from '@angular/router'; // Assurez-vous que vous importez Router depuis @angular/router
+import { Router, RouterOutlet } from '@angular/router'; // Assurez-vous que vous importez Router depuis @angular/router
 import { CommonModule } from '@angular/common';
 
 interface mangaDisplay {
@@ -11,15 +11,17 @@ interface mangaDisplay {
 
 @Component({
   selector: 'app-test-affichage',
-  templateUrl: './test-affichage.component.html',
-  styleUrls: ['./test-affichage.component.scss']
+  templateUrl: './affichage-list-manga.component.html',
+  styleUrls: ['./affichage-list-manga.component.scss'],
+  standalone: true,
+  imports: [RouterOutlet, CommonModule]
 })
-export class TestAffichageComponent implements OnInit {
+export class AffichageListMangaComponent implements OnInit {
   mangaListDisplay: mangaDisplay[] = [];
 
   constructor(
     private latestMangaAPIENService: LatestMangaAPIENService,
-    private router: Router // Assurez-vous que vous importez Router correctement
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -42,6 +44,6 @@ export class TestAffichageComponent implements OnInit {
   }
 
   onMangaClick(id: string): void {
-    this.router.navigate(['/listChapter']);
+    this.router.navigate(['listChapter', id]);
   }
 }
