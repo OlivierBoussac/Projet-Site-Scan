@@ -31,10 +31,6 @@ export class AffichageListChapitreComponent implements OnInit {
     this.id += this.route.snapshot.paramMap.get('id');
     this.loadChapterListEN();
     this.loadChapterListFR();
-    console.log("this.chaptersEN");
-    console.log(this.chaptersEN);
-    console.log("this.chaptersFR");
-    console.log(this.chaptersFR);
   }
 
   loadChapterListEN(): void {
