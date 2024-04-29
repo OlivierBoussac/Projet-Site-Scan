@@ -22,7 +22,7 @@ export class AffichageChapitreComponent implements OnInit {
   baseURL: string = "";
   hash : string = "";
   data : string[] = [];
-  index : number = 5;
+  index : number = 0;
 
   ngOnInit(): void {
     this.id += this.route.snapshot.paramMap.get('id');
@@ -40,5 +40,13 @@ export class AffichageChapitreComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  precedentJPG() {
+    this.index--;
+  }
+
+  suivantJPG() {
+    this.index++;
   }
 }

@@ -1,1 +1,3 @@
 <img src="{{baseURL}}/data/{{hash}}/{{data[index]}}">
+<button *ngIf="index > 0" (click)="precedentJPG()">Precedent</button>
+<button *ngIf="index < data.length-1" (click)="suivantJPG()">Suivant</button>
