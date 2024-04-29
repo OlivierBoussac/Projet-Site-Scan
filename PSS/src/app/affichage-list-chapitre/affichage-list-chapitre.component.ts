@@ -17,7 +17,8 @@ interface chapterDisplay {
   imports: [RouterOutlet, CommonModule]
 })
 export class AffichageListChapitreComponent implements OnInit {
-  chapters: chapterDisplay[] = [];
+  chaptersEN: chapterDisplay[] = [];
+  chaptersFR: chapterDisplay[] = [];
   id: string = "";
 
   constructor(
@@ -28,15 +29,35 @@ export class AffichageListChapitreComponent implements OnInit {
 
   ngOnInit(): void {
     this.id += this.route.snapshot.paramMap.get('id');
-    this.loadChapterList();
+    this.loadChapterListEN();
+    this.loadChapterListFR();
+    console.log("this.chaptersEN");
+    console.log(this.chaptersEN);
+    console.log("this.chaptersFR");
+    console.log(this.chaptersFR);
   }
 
-  loadChapterList(): void {
-    this.latestMangaAPIENService.getChapter(this.id).subscribe(
+  loadChapterListEN(): void {
+    this.latestMangaAPIENService.getChapterEN(this.id).subscribe(
       (data: any) => {
         for (const volume in data.volumes) {
           for (const chapter in data.volumes[volume].chapters) {
-            this.chapters.push({ id: data.volumes[volume].chapters[chapter].id, number: data.volumes[volume].chapters[chapter].chapter });
+            this.chaptersEN.push({ id: data.volumes[volume].chapters[chapter].id, number: data.volumes[volume].chapters[chapter].chapter });
+          }
+        }
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+  loadChapterListFR(): void {
+    this.latestMangaAPIENService.getChapterFR(this.id).subscribe(
+      (data: any) => {
+        for (const volume in data.volumes) {
+          for (const chapter in data.volumes[volume].chapters) {
+            this.chaptersFR.push({ id: data.volumes[volume].chapters[chapter].id, number: data.volumes[volume].chapters[chapter].chapter });
           }
         }
       },

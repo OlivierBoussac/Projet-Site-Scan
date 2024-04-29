@@ -22,7 +22,7 @@ export class AffichageChapitreComponent implements OnInit {
   baseURL: string = "";
   hash : string = "";
   data : string[] = [];
-  index : number = 0;
+  index : number = 5;
 
   ngOnInit(): void {
     this.id += this.route.snapshot.paramMap.get('id');
