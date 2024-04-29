@@ -17,8 +17,12 @@ export class LatestMangaAPIENService {
     return this.http.get<any[]>(this.baseUrl+"/manga?limit=20&availableTranslatedLanguage%5B%5D=en&availableTranslatedLanguage%5B%5D=fr&order%5BlatestUploadedChapter%5D=desc");
   }
   
-  getChapter(id:string): Observable<any[]> {    
-    return this.http.get<any[]>(this.baseUrl+"/manga/"+id+"/aggregate");
+  getChapterEN(id:string): Observable<any[]> {    
+    return this.http.get<any[]>(this.baseUrl+"/manga/"+id+"/aggregate?translatedLanguage%5B%5D=en");
+  }
+
+  getChapterFR(id:string): Observable<any[]> {    
+    return this.http.get<any[]>(this.baseUrl+"/manga/"+id+"/aggregate?translatedLanguage%5B%5D=fr");
   }
 
   getChapterJPG(id:string): Observable<any[]> {    
