@@ -8,14 +8,14 @@
     </thead>
     <td>
         <tr *ngFor="let item of chaptersEN">
-            <a (click)="onChapterClick(item.id)">Chapitre : {{ item.number }}</a>
+            <a (click)="onChapterClickEN(item)">Chapitre : {{ item.number }}</a>
             <br>
             <br>
         </tr>
     </td>
     <td>
         <tr *ngFor="let item of chaptersFR">
-            <a (click)="onChapterClick(item.id)">Chapitre : {{ item.number }}</a>
+            <a (click)="onChapterClickFR(item)">Chapitre : {{ item.number }}</a>
             <br>
             <br>
         </tr>
