@@ -1,14 +1,7 @@
-<h2>Liste des mangas</h2>
-<div>
-    <ul>
-        <li *ngFor="let item of mangaListDisplay">
-            <a (click)="onMangaClick(item.id)">{{ item.name }}</a>
-            <br>
-            <br>
-            {{ item.description }}
-            <br>
-            <br>
-            <br>
-        </li>
-    </ul>
+<h2 class="title">Liste des Mangas</h2>
+<div class="manga-list">
+  <div *ngFor="let item of mangaListDisplay" class="manga-item" (click)="onMangaClick(item.id)">
+    <a  class="manga-title">{{ item.name }}</a>
+    <p class="manga-description">{{ item.description }}</p>
+  </div>
 </div>

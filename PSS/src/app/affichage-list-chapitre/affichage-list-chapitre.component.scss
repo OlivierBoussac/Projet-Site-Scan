@@ -1,0 +1,50 @@
+.chapter-list {
+    margin-top: 100px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.chapter-list h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.chapter-row:nth-child(even) {
+    background-color: #f2f2f2;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.chapter-link {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.chapter-link:hover {
+    color: #0056b3;
+}
+
+.chapter-list h2 {
+    margin-top: 0;
+}
+
+.chapter-body {
+    vertical-align: top;
+    background-color: #f2f2f2;
+    padding-top: 10px;
+}

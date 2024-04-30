@@ -28,4 +28,8 @@ export class LatestMangaAPIENService {
   getChapterJPG(id:string): Observable<any[]> {    
     return this.http.get<any[]>(this.baseUrl+"/at-home/server/"+ id +"?forcePort443=false");
   }
+
+  getSearchManga(name:string): Observable<any[]> {    
+    return this.http.get<any[]>(this.baseUrl+"/manga?limit=10&title="+name);
+  }
 }

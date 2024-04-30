@@ -1,0 +1,47 @@
+/* manga-list.component.css */
+
+.title {
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 100px;
+    font-weight: bold; /* Ajout de cette ligne pour mettre le texte en gras */
+}
+
+  
+  .manga-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin-bottom: 100px;
+  }
+  
+  .manga-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer horizontalement les éléments */
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .manga-title {
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold; /* Ajout de cette ligne pour mettre le texte en gras */
+  }
+  
+  .manga-title:hover {
+    text-decoration: underline;
+  }
+  
+  .manga-description {
+    color: #666;
+    margin-top: 10px;
+    overflow: hidden;
+    text-align: center; /* Centrer horizontalement le texte */
+  }
