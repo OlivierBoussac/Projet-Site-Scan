@@ -63,7 +63,11 @@ export class AffichageListChapitreComponent implements OnInit {
     );
   }
 
-  onChapterClick(id: string) {
-    this.router.navigate(['chapterJPG', id]);
+  onChapterClickEN(item: chapterDisplay) {
+    this.router.navigate(['chapterJPG', "en", this.id, item.number, item.id]);
+  }
+
+  onChapterClickFR(item: chapterDisplay) {
+    this.router.navigate(['chapterJPG', "fr", this.id, item.number, item.id]);
   }
 }

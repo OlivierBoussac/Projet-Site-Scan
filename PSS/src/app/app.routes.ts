@@ -6,5 +6,5 @@ import { AffichageListChapitreComponent } from './affichage-list-chapitre/affich
 export const routes: Routes = [  
     { path: 'lastUpdated', component:  AffichageListMangaComponent},
     { path: 'listChapter/:id', component: AffichageListChapitreComponent },
-    { path: 'chapterJPG/:id', component:  AffichageChapitreComponent},
+    { path: 'chapterJPG/:langue/:idManga/:numberChap/:idChap', component:  AffichageChapitreComponent},
 ];

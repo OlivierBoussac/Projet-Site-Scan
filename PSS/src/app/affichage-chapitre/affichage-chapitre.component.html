@@ -1,3 +1,20 @@
-<img src="{{baseURL}}/data/{{hash}}/{{data[index]}}">
-<button *ngIf="index > 0" (click)="precedentJPG()">Precedent</button>
-<button *ngIf="index < data.length-1" (click)="suivantJPG()">Suivant</button>
+<button (click)="changeDisplay()">modification of display</button>
+<div *ngIf="allDisplay == true">
+    <div *ngFor="let url of listURL">
+        <img src="{{url}}">
+    </div>
+</div>
+<div *ngIf="allDisplay == false" >
+    <img src="{{listURL[indexPage]}}">
+</div>
+
+<div *ngIf="allDisplay == false">
+    <button *ngIf="indexPage > 0" (click)="precedentJPG()">Page Precedente</button>
+    <button *ngIf="indexPage < listURL.length-1" (click)="suivantJPG()">Page Suivante</button>
+</div>
+<div>
+    <button *ngIf="numberChap != '1'" (click)="chapPrecedent()">Chapitre Precedent</button>
+</div>
+<div>
+    <button *ngIf="numberChap != chapMax" (click)="chapSuivant()">Chapitre Suivant</button>
+</div>
