@@ -1,11 +1,16 @@
-<header>
-    
+<header class="header">
     <nav>
-      <ul>
-        <li><button (click)="onClickGoHome()" routerLink="/home">home</button></li>
-        <li><button (click)="onClickGoLastUpdated()" routerLink="/lastUpdated">last update</button></li>
-        <li><input type="text" onchange="searchManga()" placeholder="Rechercher..."></li>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a (click)="onClickGoHome()" routerLink="/home" class="nav-link">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a (click)="onClickGoLastUpdated()" routerLink="/lastUpdated" class="nav-link">Dernières mises à jour</a>
+        </li>
+        <li class="nav-item search-item">
+          <input type="text" (keyup.enter)="onMangaKeyUp($event)" placeholder="Entrez un titre...">
+        </li>
       </ul>
     </nav>
-
-</header>
+  </header>
+  

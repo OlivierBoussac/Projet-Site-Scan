@@ -1,16 +1,21 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [    
+    FormsModule,
+    CommonModule,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
 
-  constructor(private router: Router) { }
+  constructor( private router: Router) { }
 
   onClickGoHome(){
     this.router.navigate(['home']);
@@ -19,8 +24,8 @@ export class HeaderComponent {
   onClickGoLastUpdated() {
     this.router.navigate(['lastUpdated']);
   }
-  
-  searchManga(){
 
+  onMangaKeyUp(manga: any): void {
+    this.router.navigate(['listMangaSearch', manga.target.value]);
   }
 }

@@ -30,6 +30,6 @@ export class LatestMangaAPIENService {
   }
 
   getSearchManga(name:string): Observable<any[]> {    
-    return this.http.get<any[]>(this.baseUrl+"/manga?limit=10&title="+name);
+    return this.http.get<any[]>(this.baseUrl+"/manga?limit=20&title="+name);
   }
 }
