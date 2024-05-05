@@ -1,11 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { LatestMangaAPIENService } from '../latest-manga-api-en.service';
 
 interface mangaDisplay {
   name: string;
-  description: string;
   id: string;
 }
 
@@ -18,7 +17,7 @@ interface mangaDisplay {
 })
 export class SearchListMangaComponent {
   mangaListDisplay: mangaDisplay[] = [];
-  mangaName: string = "";
+  mangaName: string = "";  
 
   constructor(
     private latestMangaAPIENService: LatestMangaAPIENService,
@@ -27,18 +26,22 @@ export class SearchListMangaComponent {
   ) { }
 
   ngOnInit(): void {
-    this.mangaListDisplay = [];
-    this.mangaName = this.route.snapshot.paramMap.get('mangaName') || '';
-    this.searchManga();
+    this.route.paramMap.subscribe(params => {
+      this.mangaListDisplay = [];
+      this.mangaName = params.get('mangaName') || '';
+      this.searchManga();
+    });
   }
 
   searchManga() {
     this.latestMangaAPIENService.getSearchManga(this.mangaName).subscribe(
       (data: any) => {
-        this.mangaListDisplay = data.data.map((manga: any) => ({
-          name: manga.attributes.title.en,
-          id: manga.id
-        }));
+        data.data.forEach((element: any) => {
+          if (element.attributes.title.en != null)
+            this.mangaListDisplay.push({name: element.attributes.title.en,id: element.id});
+          else 
+            this.mangaListDisplay.push({name: element.attributes.title.ja,id: element.id});
+        });
       }
     );
   }

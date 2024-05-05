@@ -8,7 +8,7 @@
           <a (click)="onClickGoLastUpdated()" routerLink="/lastUpdated" class="nav-link">Dernières mises à jour</a>
         </li>
         <li class="nav-item search-item">
-          <input type="text" (keyup.enter)="onMangaKeyUp($event)" placeholder="Entrez un titre...">
+          <input class="search-input" type="text" [(ngModel)]="searchQuery" (keyup.enter)="onMangaKeyUp()" placeholder="Entrez un titre...">
         </li>
       </ul>
     </nav>

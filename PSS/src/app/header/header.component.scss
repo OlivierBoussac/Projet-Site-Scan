@@ -30,32 +30,24 @@ header nav ul li a {
   text-decoration: none;
 }
 
-#searchResults {
-  list-style-type: none;
-  padding: 0;
-}
-
-#searchResults li {
-  background-color: #f4f4f4;
-  border: 1px solid #ddd;
-  margin-top: 5px;
-  padding: 10px;
-}
-
 .search-item {
   position: relative; 
 }
 
-.search-field {
-  width: 300px;
+.search-input {
+  color: white;
+  background-color: transparent;
+  border: none; 
+  outline: none; 
+  box-shadow: none; 
+  border-bottom: #fff;
+  font-size: 16px;
 }
 
-.search-results-panel {
-  position: absolute; 
-  top: 100%; 
-  left: 0;
-  width: calc(100% - 40px); 
-  max-height: 200px; 
-  overflow-y: auto; 
-  z-index: 1;
+.example-form {
+  width: 15vw;
+}
+
+.example-full-width {
+  width: 100%;
 }
