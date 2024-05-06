@@ -1,20 +1,20 @@
-<button (click)="changeDisplay()">modification of display</button>
-<div *ngIf="allDisplay == true">
-    <div *ngFor="let url of listURL">
-        <img src="{{url}}">
-    </div>
-</div>
-<div *ngIf="allDisplay == false" >
-    <img src="{{listURL[indexPage]}}">
+<button class="display-button" (click)="changeDisplay()">Modification de l'affichage</button>
+
+<div class="navigation-buttons">
+    <button *ngIf="numberChap !== '1'" (click)="chapPrecedent()">Chapitre Précédent</button>
+    <button *ngIf="numberChap !== chapMax" (click)="chapSuivant()">Chapitre Suivant</button>
 </div>
 
-<div *ngIf="allDisplay == false">
-    <button *ngIf="indexPage > 0" (click)="precedentJPG()">Page Precedente</button>
-    <button *ngIf="indexPage < listURL.length-1" (click)="suivantJPG()">Page Suivante</button>
+<div *ngIf="allDisplay == true" class="image-container">
+    <div *ngFor="let url of listURL" class="image-wrapper">
+        <img [src]="url" class="image">
+    </div>
 </div>
-<div>
-    <button *ngIf="numberChap != '1'" (click)="chapPrecedent()">Chapitre Precedent</button>
-</div>
-<div>
-    <button *ngIf="numberChap != chapMax" (click)="chapSuivant()">Chapitre Suivant</button>
+
+<div *ngIf="allDisplay == false" class="image-container">
+    <img [src]="listURL[indexPage]" class="image">
+    <div class="navigation-buttons">
+        <button *ngIf="indexPage > 0" (click)="precedentJPG()">Page Précédente</button>
+        <button *ngIf="indexPage < listURL.length - 1" (click)="suivantJPG()">Page Suivante</button>
+    </div>
 </div>
