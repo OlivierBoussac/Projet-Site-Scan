@@ -18,22 +18,23 @@
   
   .manga-item {
     display: flex;
-    flex-direction: column;
+    justify-content: center !important;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-    height: 12vh;
+    height: 10vh;
     width: 18vw;
-    line-height: 24px;
+    line-height: 20px;
   }
   
   .manga-title {
-    font-size: 24px;
+    font-size: 16px;
     color: #333;
     text-decoration: none;
+    align-items: center;
     font-weight: bold;
   }
   
