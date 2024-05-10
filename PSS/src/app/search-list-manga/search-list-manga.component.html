@@ -1,6 +1,12 @@
-<h2 class="title">Liste des Mangas</h2>
+<h2 class="title">Liste des Mangas recherchés</h2>
 <div class="manga-list">
-  <div *ngFor="let item of mangaListDisplay" class="manga-item" (click)="onMangaClick(item.id)">
-    <a  class="manga-title">{{ item.name }}</a>
+  <div *ngFor="let item of mangaListDisplay" class="manga-item" (click)="onMangaClick(item.id, item.name)">
+    <ng-container *ngIf="item.cover == ''; else withCover">
+      <a class="manga-title">{{ item.name }}</a>
+    </ng-container>
+    <ng-template #withCover>
+      <img src="https://uploads.mangadex.org/covers/{{item.id}}/{{item.cover}}" class="cover-title">
+      <a class="manga-title">{{ item.name }}</a>
+    </ng-template>
   </div>
 </div>

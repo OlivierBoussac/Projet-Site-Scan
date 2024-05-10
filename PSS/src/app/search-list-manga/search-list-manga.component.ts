@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
-import { LatestMangaAPIENService } from '../latest-manga-api-en.service';
+import { MangaAPIService } from '../manga-api.service';
 
 interface mangaDisplay {
   name: string;
   id: string;
+  cover: string;
 }
 
 @Component({
@@ -20,7 +21,7 @@ export class SearchListMangaComponent {
   mangaName: string = "";  
 
   constructor(
-    private latestMangaAPIENService: LatestMangaAPIENService,
+    private mangaAPIService: MangaAPIService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -34,19 +35,25 @@ export class SearchListMangaComponent {
   }
 
   searchManga() {
-    this.latestMangaAPIENService.getSearchManga(this.mangaName).subscribe(
+    this.mangaAPIService.getSearchManga(this.mangaName).subscribe(
       (data: any) => {
         data.data.forEach((element: any) => {
-          if (element.attributes.title.en != null)
-            this.mangaListDisplay.push({name: element.attributes.title.en,id: element.id});
-          else 
-            this.mangaListDisplay.push({name: element.attributes.title.ja,id: element.id});
+          this.mangaAPIService.getCoverManga(element.id).subscribe(
+            (cover:any) => {
+              if (cover.data[0].attributes.fileName == null) 
+                cover.data[0].attributes.fileName = "";
+              if (element.attributes.title.en != null)
+                this.mangaListDisplay.push({name: element.attributes.title.en,id: element.id, cover: cover.data[0].attributes.fileName});
+              else 
+                this.mangaListDisplay.push({name: element.attributes.title.ja,id: element.id, cover: cover.data[0].attributes.fileName});
+            }
+          );
         });
       }
     );
   }
 
-  onMangaClick(id: string): void {
-    this.router.navigate(['listChapter', id]);
+  onMangaClick(id: string, name:string): void {
+    this.router.navigate(['listChapter', id, name]);
   }
 }

@@ -1,4 +1,4 @@
-<h2 class="title">Liste des Mangas</h2>
+<h2 class="title">Liste des Favories</h2>
 <div class="manga-list">
   <div *ngFor="let item of mangaListDisplay" class="manga-item" (click)="onMangaClick(item.id, item.name)">
     <ng-container *ngIf="item.cover == ''; else withCover">

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener  } from '@angular/core';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
-import { LatestMangaAPIENService } from '../latest-manga-api-en.service';
+import { MangaAPIService } from '../manga-api.service';
 
 interface chapterDisplay {
   id: string;
@@ -18,7 +18,7 @@ interface chapterDisplay {
 
 export class AffichageChapitreComponent implements OnInit {
   constructor(
-    private latestMangaAPIENService: LatestMangaAPIENService,
+    private mangaAPIService: MangaAPIService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
@@ -27,16 +27,17 @@ export class AffichageChapitreComponent implements OnInit {
   idChap: string = "";
   idManga: string = "";
   langue: string = "";
-  indexPage : number = 0;
+  mangaName: string = "";
   indexChap : string = "";
   chapMax : string = "";
   chapters: chapterDisplay[] = [];
   listURL: string[] = [];
-  allDisplay: boolean = false
+  showScrollTopButton: boolean = false;
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.numberChap = params.get('numberChap') || '';
+      this.mangaName = params.get('mangaName') || '';
       this.idManga = params.get('idManga') || '';
       this.idChap = params.get('idChap') || '';
       this.langue = params.get('langue') || '';
@@ -48,11 +49,10 @@ export class AffichageChapitreComponent implements OnInit {
 
   initData() {
     this.listURL = [];
-    this.indexPage = 0;
   }
 
   loadChapterJPG(): void {
-    this.latestMangaAPIENService.getChapterJPG(this.idChap).subscribe(
+    this.mangaAPIService.getChapterJPG(this.idChap).subscribe(
       (data: any) => {
         for (let index = 0; index < data.chapter.data.length; index++) {
           this.listURL.push(data.baseUrl+"/data/"+data.chapter.hash+"/"+data.chapter.data[index])
@@ -67,7 +67,7 @@ export class AffichageChapitreComponent implements OnInit {
   loadChapterList(): void {
     switch (this.langue) {
       case "en":
-        this.latestMangaAPIENService.getChapterEN(this.idManga).subscribe(
+        this.mangaAPIService.getChapterEN(this.idManga).subscribe(
           (data: any) => {
             for (const volume in data.volumes) {
               for (const chapter in data.volumes[volume].chapters) {
@@ -84,7 +84,7 @@ export class AffichageChapitreComponent implements OnInit {
         );
         break;
       case "fr":
-        this.latestMangaAPIENService.getChapterFR(this.idManga).subscribe(
+        this.mangaAPIService.getChapterFR(this.idManga).subscribe(
           (data: any) => {
             for (const volume in data.volumes) {
               for (const chapter in data.volumes[volume].chapters) {
@@ -103,14 +103,6 @@ export class AffichageChapitreComponent implements OnInit {
     }
   }
 
-  precedentJPG() {
-    this.indexPage--;
-  }
-
-  suivantJPG() {
-    this.indexPage++;
-  }
-
   chapSuivant() {
     this.router.navigate([ 'chapterJPG', this.langue, this.idManga, (parseInt(this.numberChap)+1).toString(), (this.chapters[parseInt(this.numberChap)+1]).id]);
   }
@@ -119,7 +111,17 @@ export class AffichageChapitreComponent implements OnInit {
     this.router.navigate(['chapterJPG', this.langue, this.idManga, (parseInt(this.numberChap)-1).toString(), (this.chapters[parseInt(this.numberChap)-1]).id]);  
   }
 
-  changeDisplay() {
-    this.allDisplay = !this.allDisplay;
+  returnChapMenu(id: string, name: string) {
+    this.router.navigate(['listChapter', id , name]);  
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.showScrollTopButton = (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) > 100;
   }
 }
+

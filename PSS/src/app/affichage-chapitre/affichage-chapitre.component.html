@@ -1,20 +1,15 @@
-<button class="display-button" (click)="changeDisplay()">Modification de l'affichage</button>
+
+<h1 class="name-manga" (click)="returnChapMenu(this.idManga, this.mangaName)">{{this.mangaName}}</h1>
 
 <div class="navigation-buttons">
     <button *ngIf="numberChap !== '1'" (click)="chapPrecedent()">Chapitre Précédent</button>
     <button *ngIf="numberChap !== chapMax" (click)="chapSuivant()">Chapitre Suivant</button>
 </div>
 
-<div *ngIf="allDisplay == true" class="image-container">
+<div class="image-container">
     <div *ngFor="let url of listURL" class="image-wrapper">
         <img [src]="url" class="image">
     </div>
 </div>
 
-<div *ngIf="allDisplay == false" class="image-container">
-    <img [src]="listURL[indexPage]" class="image">
-    <div class="navigation-buttons">
-        <button *ngIf="indexPage > 0" (click)="precedentJPG()">Page Précédente</button>
-        <button *ngIf="indexPage < listURL.length - 1" (click)="suivantJPG()">Page Suivante</button>
-    </div>
-</div>
+<button *ngIf="showScrollTopButton" class="scroll-top-button" (click)="scrollToTop()">Remonter en haut</button>

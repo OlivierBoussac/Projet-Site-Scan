@@ -1,43 +1,21 @@
-.display-button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
+.name-manga {
+    margin-top: 100px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-bottom: 10px;
-    margin-top: 100px;
-    cursor: pointer;
-    border-radius: 5px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.image-container {
-    margin-bottom: 100px;
-    margin-top: 100px;
-}
-
-.image-wrapper {
+    font-size: 5vh;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
-.image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.name-manga:hover {
+    text-decoration: underline;
 }
 
 .navigation-buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
 
 .navigation-buttons button {
@@ -57,10 +35,42 @@
     background-color: #45a049;
 }
 
-.chapter-buttons {
-    margin-top: 20px;
+.image-container {
+    margin-top: 100px;
+    padding-bottom: 5vh;
 }
 
-.chapter-buttons button:last-child {
-    margin-right: 0;
+.image-wrapper {
+    max-width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.scroll-top-button {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 99;
+}
+
+.scroll-top-button:hover {
+    background-color: #45a049;
 }

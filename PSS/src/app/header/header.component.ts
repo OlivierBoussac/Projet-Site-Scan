@@ -27,6 +27,10 @@ export class HeaderComponent {
     this.router.navigate(['home']);
   }
 
+  onClickGoFollows() {
+    this.router.navigate(['follows']);
+  }
+
   onClickGoLastUpdated() {
     this.router.navigate(['lastUpdated']);
   }
