@@ -1,0 +1,7 @@
+{
+  "routes": [
+    "/follows",
+    "/home",
+    "/lastUpdated"
+  ]
+}
