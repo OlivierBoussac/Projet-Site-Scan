@@ -16,6 +16,7 @@ interface mangaDisplay {
   standalone: true,
   imports: [RouterOutlet, CommonModule]
 })
+
 export class AffichageListMangaComponent implements OnInit {
   mangaListDisplay: mangaDisplay[] = [];
 
