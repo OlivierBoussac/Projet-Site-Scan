@@ -1,0 +1,275 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PSS\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\angular.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PSS\\angular.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PSS\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\tsconfig.app.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PSS\\tsconfig.app.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\tsconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PSS\\tsconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\latest-manga-api-en.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PSS\\src\\app\\latest-manga-api-en.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\affichage-list-manga\\affichage-list-manga.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PSS\\src\\app\\affichage-list-manga\\affichage-list-manga.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\affichage-list-manga\\affichage-list-manga.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PSS\\src\\app\\affichage-list-manga\\affichage-list-manga.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\header\\header.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PSS\\src\\app\\header\\header.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\app.routes.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PSS\\src\\app\\app.routes.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\app.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PSS\\src\\app\\app.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\app.config.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PSS\\src\\app\\app.config.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\app.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PSS\\src\\app\\app.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PSS\\src\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\home-page\\home-page.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PSS\\src\\app\\home-page\\home-page.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "angular.json",
+              "DocumentMoniker": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\angular.json",
+              "RelativeDocumentMoniker": "PSS\\angular.json",
+              "ToolTip": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\angular.json",
+              "RelativeToolTip": "PSS\\angular.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-22T19:29:16.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "package.json",
+              "DocumentMoniker": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\package.json",
+              "RelativeDocumentMoniker": "PSS\\package.json",
+              "ToolTip": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\package.json",
+              "RelativeToolTip": "PSS\\package.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-22T19:29:15.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\README.md",
+              "RelativeDocumentMoniker": "PSS\\README.md",
+              "ToolTip": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\README.md",
+              "RelativeToolTip": "PSS\\README.md",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2024-11-22T19:29:13.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "tsconfig.app.json",
+              "DocumentMoniker": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\tsconfig.app.json",
+              "RelativeDocumentMoniker": "PSS\\tsconfig.app.json",
+              "ToolTip": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\tsconfig.app.json",
+              "RelativeToolTip": "PSS\\tsconfig.app.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-22T19:29:12.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "tsconfig.json",
+              "DocumentMoniker": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\tsconfig.json",
+              "RelativeDocumentMoniker": "PSS\\tsconfig.json",
+              "ToolTip": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\tsconfig.json",
+              "RelativeToolTip": "PSS\\tsconfig.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-22T19:29:11.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "latest-manga-api-en.service.ts",
+              "DocumentMoniker": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\latest-manga-api-en.service.ts",
+              "RelativeDocumentMoniker": "PSS\\src\\app\\latest-manga-api-en.service.ts",
+              "ToolTip": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\latest-manga-api-en.service.ts",
+              "RelativeToolTip": "PSS\\src\\app\\latest-manga-api-en.service.ts",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-11-22T19:02:57.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "affichage-list-manga.component.html",
+              "DocumentMoniker": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\affichage-list-manga\\affichage-list-manga.component.html",
+              "RelativeDocumentMoniker": "PSS\\src\\app\\affichage-list-manga\\affichage-list-manga.component.html",
+              "ToolTip": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\affichage-list-manga\\affichage-list-manga.component.html",
+              "RelativeToolTip": "PSS\\src\\app\\affichage-list-manga\\affichage-list-manga.component.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-22T19:00:39.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "affichage-list-manga.component.ts",
+              "DocumentMoniker": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\affichage-list-manga\\affichage-list-manga.component.ts",
+              "RelativeDocumentMoniker": "PSS\\src\\app\\affichage-list-manga\\affichage-list-manga.component.ts",
+              "ToolTip": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\affichage-list-manga\\affichage-list-manga.component.ts",
+              "RelativeToolTip": "PSS\\src\\app\\affichage-list-manga\\affichage-list-manga.component.ts",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwC4AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-11-22T19:00:37.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "header.component.ts",
+              "DocumentMoniker": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\header\\header.component.ts",
+              "RelativeDocumentMoniker": "PSS\\src\\app\\header\\header.component.ts",
+              "ToolTip": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\header\\header.component.ts",
+              "RelativeToolTip": "PSS\\src\\app\\header\\header.component.ts",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABoAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-11-22T19:00:12.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "app.config.ts",
+              "DocumentMoniker": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\app.config.ts",
+              "RelativeDocumentMoniker": "PSS\\src\\app\\app.config.ts",
+              "ToolTip": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\app.config.ts",
+              "RelativeToolTip": "PSS\\src\\app\\app.config.ts",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-11-22T19:00:04.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "app.component.ts",
+              "DocumentMoniker": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\app.component.ts",
+              "RelativeDocumentMoniker": "PSS\\src\\app\\app.component.ts",
+              "ToolTip": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\app.component.ts",
+              "RelativeToolTip": "PSS\\src\\app\\app.component.ts",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-11-22T18:59:47.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "app.routes.ts",
+              "DocumentMoniker": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\app.routes.ts",
+              "RelativeDocumentMoniker": "PSS\\src\\app\\app.routes.ts",
+              "ToolTip": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\app.routes.ts",
+              "RelativeToolTip": "PSS\\src\\app\\app.routes.ts",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-11-22T18:58:00.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\index.html",
+              "RelativeDocumentMoniker": "PSS\\src\\index.html",
+              "ToolTip": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\index.html",
+              "RelativeToolTip": "PSS\\src\\index.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-22T18:49:39.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "app.component.html",
+              "DocumentMoniker": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\app.component.html",
+              "RelativeDocumentMoniker": "PSS\\src\\app\\app.component.html",
+              "ToolTip": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\app.component.html",
+              "RelativeToolTip": "PSS\\src\\app\\app.component.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-22T18:48:50.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "home-page.component.html",
+              "DocumentMoniker": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\home-page\\home-page.component.html",
+              "RelativeDocumentMoniker": "PSS\\src\\app\\home-page\\home-page.component.html",
+              "ToolTip": "C:\\Users\\olbou\\Documents\\Projet-Site-Scan\\PSS\\src\\app\\home-page\\home-page.component.html",
+              "RelativeToolTip": "PSS\\src\\app\\home-page\\home-page.component.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-22T18:48:38.888Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
