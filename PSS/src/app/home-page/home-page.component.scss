@@ -1,6 +1,230 @@
-.content {
-    text-align: center;
-    margin-top: 50px;
-    min-height: calc(100vh - 160px);
-    margin-bottom: 60px;
+.title {
+  font-size: 2.2rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.manga-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin: 0 2vw 4rem 2vw;
+}
+
+.manga-card {
+  background: #23272f;
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.manga-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+}
+.manga-card img {
+  object-fit: cover;
+  width: 100%;
+  height: 220px;
+  border-radius: 12px 12px 0 0;
+  background: #181a1f;
+}
+.manga-desc {
+  color: #b0b0b0;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  min-height: 2.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 900px) {
+  .manga-list-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+  .manga-card img {
+    height: 140px;
+  }
+}
+
+body {
+  background: #23272f;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #23272f;
+  padding: 1.2rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.logo {
+  font-size: 2.2rem;
+  color: #ffb6c1;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.nav-btn {
+  background: #3a3f4b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.nav-btn:hover {
+  background: #ffb6c1;
+  color: #23272f;
+}
+.search-bar {
+  border-radius: 8px;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin-left: 1rem;
+  background: #181a1f;
+  color: #fff;
+}
+.user-actions {
+  color: #b0b0b0;
+  font-size: 1rem;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin: 2rem 2vw;
+  margin-top: 5%;
+}
+.featured-section {
+  flex: 3;
+}
+.section-title {
+  color: #ffe082;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.featured-manga-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+.featured-manga-card {
+  background: #2c313a;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.featured-manga-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+}
+.featured-manga-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.7rem;
+}
+.featured-manga-title {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+.featured-manga-chapter {
+  color: #ffe082;
+  font-size: 0.95rem;
+}
+
+.sidebar {
+  flex: 1;
+  background: #2c313a;
+  border-radius: 12px;
+  padding: 1rem;
+  min-width: 220px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.sidebar-title {
+  color: #80d8ff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.popular-manga-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.popular-manga-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #3a3f4b;
+  color: #fff;
+}
+.popular-manga-name {
+  font-weight: bold;
+}
+.popular-manga-chapter {
+  color: #ffe082;
+  font-size: 0.95rem;
+}
+
+.new-chapters-section {
+  margin: 2rem 2vw;
+  background: #2c313a;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.new-chapters-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.new-chapters-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #3a3f4b;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    flex-direction: column;
+  }
+  .sidebar {
+    min-width: 100%;
+    margin-top: 2rem;
+  }
+  .featured-manga-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  .featured-manga-card img {
+    height: 90px;
+  }
 }

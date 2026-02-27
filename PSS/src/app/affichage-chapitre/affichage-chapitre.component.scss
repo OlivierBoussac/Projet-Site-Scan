@@ -1,19 +1,129 @@
+
+.chapter-card {
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    border-radius: 16px;
+    padding: 32px 24px;
+    margin: 40px auto;
+    max-width: 900px;
+}
+
 .display-button {
-    background-color: #4CAF50;
+    background: linear-gradient(90deg, #4CAF50 0%, #2196F3 100%);
     border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-bottom: 10px;
-    margin-top: 100px;
+    color: #fff;
+    padding: 12px 28px;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    margin-top: 0;
     cursor: pointer;
-    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(76,175,80,0.15);
+    transition: background 0.2s;
+}
+
+.display-button:hover {
+    background: linear-gradient(90deg, #2196F3 0%, #4CAF50 100%);
+}
+
+.chapter-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.chapter-navigation button {
+    background-color: #2196F3;
+    border: none;
+    color: #fff;
+    padding: 10px 22px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 8px rgba(33,150,243,0.12);
+    transition: background 0.2s;
+}
+
+.chapter-navigation button:hover {
+    background-color: #1976D2;
+}
+
+.chapter-info {
+    font-weight: 600;
+    font-size: 18px;
+    color: #333;
+}
+
+.image-container {
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+
+.image-wrapper {
+    margin-bottom: 16px;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.page-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.page-navigation button {
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    padding: 10px 22px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 8px rgba(76,175,80,0.12);
+    transition: background 0.2s;
+}
+
+.page-navigation button:hover {
+    background-color: #388E3C;
+}
+
+.page-info {
+    font-weight: 500;
+    font-size: 16px;
+    color: #555;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
 }
 
 .image-container {

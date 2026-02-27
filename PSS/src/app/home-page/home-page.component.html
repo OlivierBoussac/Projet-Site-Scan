@@ -1,0 +1,33 @@
+<!-- Main Content -->
+<div class="main-content">
+  <div class="featured-section">
+    <h2 class="section-title">Featured Manga</h2>
+    <div class="featured-manga-grid">
+      <div *ngFor="let item of mangaListDisplayLastUpdated | slice:0:12" class="featured-manga-card" (click)="onMangaClick(item.id)">
+        <img [src]="item.coverUrl || 'assets/placeholder-manga.png'" alt="{{ item.name }}" />
+        <div class="featured-manga-title">{{ item.name }}</div>
+        <div class="featured-manga-chapter" *ngIf="item.lastChapter">Ch.{{ item.lastChapter }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <h3 class="sidebar-title">Popular Manga</h3>
+    <ul class="popular-manga-list">
+      <li *ngFor="let item of mangaListDisplayPopular | slice:0:10" (click)="onMangaClick(item.id)">
+        <span class="popular-manga-name">{{ item.name }}</span>
+        <span class="popular-manga-chapter" *ngIf="item.lastChapter">Ch.{{ item.lastChapter }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- New Chapters Section -->
+<div class="new-chapters-section">
+  <h3>New Chapters</h3>
+  <ul class="new-chapters-list">
+    <li *ngFor="let item of mangaListDisplayLastUpdated | slice:0:4" (click)="onMangaClick(item.id)">
+      <span>{{ item.name }}</span> <span *ngIf="item.lastChapter">Ch.{{ item.lastChapter }}</span>
+    </li>
+  </ul>
+</div>

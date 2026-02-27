@@ -1,3 +1,13 @@
+<div class="manga-header">
+  <div class="manga-cover">
+    <img *ngIf="mangaCover" [src]="mangaCover" alt="cover" />
+  </div>
+  <div class="manga-info">
+    <h2 class="manga-title">{{ mangaName }}</h2>
+    <div class="manga-description">{{ mangaDescription }}</div>
+  </div>
+</div>
+
 <div class="chapter-list">
     <h2>Liste des chapitres</h2>
     <table>

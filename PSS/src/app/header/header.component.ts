@@ -16,7 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     CommonModule,
   ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
   searchQuery: string = '';

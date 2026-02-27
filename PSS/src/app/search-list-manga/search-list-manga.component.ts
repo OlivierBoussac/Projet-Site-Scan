@@ -6,14 +6,15 @@ import { LatestMangaAPIENService } from '../latest-manga-api-en.service';
 interface mangaDisplay {
   name: string;
   id: string;
+  coverUrl?: string;
 }
 
 @Component({
   selector: 'app-search-list-manga',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [CommonModule],
   templateUrl: './search-list-manga.component.html',
-  styleUrl: './search-list-manga.component.scss'
+  styleUrls: ['./search-list-manga.component.scss']
 })
 export class SearchListMangaComponent {
   mangaListDisplay: mangaDisplay[] = [];
@@ -34,14 +35,26 @@ export class SearchListMangaComponent {
   }
 
   searchManga() {
+    if (!this.mangaName) {
+      this.mangaListDisplay = [];
+      return;
+    }
+
     this.latestMangaAPIENService.getSearchManga(this.mangaName).subscribe(
-      (data: any) => {
-        data.data.forEach((element: any) => {
-          if (element.attributes.title.en != null)
-            this.mangaListDisplay.push({name: element.attributes.title.en,id: element.id});
-          else 
-            this.mangaListDisplay.push({name: element.attributes.title.ja,id: element.id});
+      (items: any[]) => {
+        this.mangaListDisplay = items.map((element: any) => {
+          const titleObj = element?.attributes?.title ?? {};
+          const name = titleObj.en || titleObj.fr || titleObj.jp || titleObj.ko || titleObj.zh || Object.values(titleObj)[0] || 'Untitled';
+          return {
+            name,
+            id: element?.id ?? '',
+            coverUrl: element?.coverUrl || 'assets/placeholder-manga.png'
+          };
         });
+      },
+      (err) => {
+        console.error('searchManga error', err);
+        this.mangaListDisplay = [];
       }
     );
   }

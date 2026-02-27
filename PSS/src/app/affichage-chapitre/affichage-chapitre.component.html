@@ -1,20 +1,35 @@
-<button class="display-button" (click)="changeDisplay()">Modification de l'affichage</button>
 
-<div class="navigation-buttons">
-    <button *ngIf="numberChap !== '1'" (click)="chapPrecedent()">Chapitre Précédent</button>
-    <button *ngIf="numberChap !== chapMax" (click)="chapSuivant()">Chapitre Suivant</button>
-</div>
+<div class="chapter-card">
+    <button class="display-button" (click)="changeDisplay()">
+        <span class="material-icons">swap_horiz</span> Modification de l'affichage
+    </button>
 
-<div *ngIf="allDisplay == true" class="image-container">
-    <div *ngFor="let url of listURL" class="image-wrapper">
-        <img [src]="url" class="image">
+    <div class="chapter-navigation">
+        <button *ngIf="numberChap !== '1'" (click)="chapPrecedent()">
+            <span class="material-icons">arrow_back</span> Chapitre Précédent
+        </button>
+        <span class="chapter-info">Chapitre {{ numberChap }} / {{ chapMax }}</span>
+        <button *ngIf="numberChap !== chapMax" (click)="chapSuivant()">
+            Chapitre Suivant <span class="material-icons">arrow_forward</span>
+        </button>
     </div>
-</div>
 
-<div *ngIf="allDisplay == false" class="image-container">
-    <img [src]="listURL[indexPage]" class="image">
-    <div class="navigation-buttons">
-        <button *ngIf="indexPage > 0" (click)="precedentJPG()">Page Précédente</button>
-        <button *ngIf="indexPage < listURL.length - 1" (click)="suivantJPG()">Page Suivante</button>
+    <div *ngIf="allDisplay == true" class="image-container">
+        <div *ngFor="let url of listURL" class="image-wrapper">
+            <img [src]="url" class="image">
+        </div>
+    </div>
+
+    <div *ngIf="allDisplay == false" class="image-container">
+        <img [src]="listURL[indexPage]" class="image">
+        <div class="page-navigation">
+            <button *ngIf="indexPage > 0" (click)="precedentJPG()">
+                <span class="material-icons">chevron_left</span> Page Précédente
+            </button>
+            <span class="page-info">Page {{ indexPage + 1 }} / {{ listURL.length }}</span>
+            <button *ngIf="indexPage < listURL.length - 1" (click)="suivantJPG()">
+                Page Suivante <span class="material-icons">chevron_right</span>
+            </button>
+        </div>
     </div>
 </div>

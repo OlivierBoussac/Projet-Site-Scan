@@ -11,9 +11,9 @@ interface chapterDisplay {
 @Component({
   selector: 'app-affichage-chapitre',
   templateUrl: './affichage-chapitre.component.html',
-  styleUrl: './affichage-chapitre.component.scss',
+  styleUrls: ['./affichage-chapitre.component.scss'],
   standalone: true,
-  imports: [RouterOutlet, CommonModule]
+  imports: [CommonModule]
 })
 
 export class AffichageChapitreComponent implements OnInit {

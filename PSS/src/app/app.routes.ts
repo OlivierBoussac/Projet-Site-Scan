@@ -5,6 +5,7 @@ import { AffichageListChapitreComponent } from './affichage-list-chapitre/affich
 import { HomePageComponent } from './home-page/home-page.component';
 import { SearchListMangaComponent } from './search-list-manga/search-list-manga.component';
 
+
 export const routes: Routes = [  
     { path: 'home', component: HomePageComponent },
     { path: 'lastUpdated', component:  AffichageListMangaComponent},
