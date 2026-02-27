@@ -12,6 +12,7 @@ interface chapterDisplay {
     selector: 'app-affichage-chapitre',
     templateUrl: './affichage-chapitre.component.html',
     styleUrls: ['./affichage-chapitre.component.scss'],
+    standalone: true,
     imports: [CommonModule]
 })
 
