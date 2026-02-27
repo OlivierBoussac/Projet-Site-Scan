@@ -11,6 +11,7 @@ interface mangaDisplay {
 
 @Component({
     selector: 'app-search-list-manga',
+    standalone: true,
     imports: [CommonModule],
     templateUrl: './search-list-manga.component.html',
     styleUrls: ['./search-list-manga.component.scss']

@@ -7,6 +7,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
     selector: 'app-header',
+    standalone: true,
     imports: [
         FormsModule,
         MatFormFieldModule,
