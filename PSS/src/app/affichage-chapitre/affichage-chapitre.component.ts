@@ -9,11 +9,10 @@ interface chapterDisplay {
 }
 
 @Component({
-  selector: 'app-affichage-chapitre',
-  templateUrl: './affichage-chapitre.component.html',
-  styleUrls: ['./affichage-chapitre.component.scss'],
-  standalone: true,
-  imports: [CommonModule]
+    selector: 'app-affichage-chapitre',
+    templateUrl: './affichage-chapitre.component.html',
+    styleUrls: ['./affichage-chapitre.component.scss'],
+    imports: [CommonModule]
 })
 
 export class AffichageChapitreComponent implements OnInit {

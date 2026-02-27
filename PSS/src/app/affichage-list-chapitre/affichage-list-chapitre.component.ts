@@ -10,11 +10,10 @@ interface chapterDisplay {
 }
 
 @Component({
-  selector: 'app-affichage-list-chapitre',
-  templateUrl: './affichage-list-chapitre.component.html',
-  styleUrls: ['./affichage-list-chapitre.component.scss'],
-  standalone: true,
-  imports: [CommonModule]
+    selector: 'app-affichage-list-chapitre',
+    templateUrl: './affichage-list-chapitre.component.html',
+    styleUrls: ['./affichage-list-chapitre.component.scss'],
+    imports: [CommonModule]
 })
 export class AffichageListChapitreComponent implements OnInit {
   chaptersEN: chapterDisplay[] = [];

@@ -12,11 +12,10 @@ interface mangaDisplay {
 }
 
 @Component({
-  selector: 'app-test-affichage',
-  templateUrl: './affichage-list-manga.component.html',
-  styleUrls: ['./affichage-list-manga.component.scss'],
-  standalone: true,
-  imports: [CommonModule]
+    selector: 'app-test-affichage',
+    templateUrl: './affichage-list-manga.component.html',
+    styleUrls: ['./affichage-list-manga.component.scss'],
+    imports: [CommonModule]
 })
 export class AffichageListMangaComponent implements OnInit {
   mangaListDisplayLastUpdated: mangaDisplay[] = [];

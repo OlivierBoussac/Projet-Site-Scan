@@ -14,11 +14,10 @@ interface mangaDisplay {
 
 
 @Component({
-  selector: 'app-home-page',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+    selector: 'app-home-page',
+    imports: [CommonModule],
+    templateUrl: './home-page.component.html',
+    styleUrls: ['./home-page.component.scss']
 })
 
 export class HomePageComponent implements OnInit {

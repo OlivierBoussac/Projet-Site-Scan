@@ -6,17 +6,16 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [    
-    FormsModule,
-    MatFormFieldModule, 
-    MatInputModule, 
-    ReactiveFormsModule,
-    CommonModule,
-  ],
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+    selector: 'app-header',
+    imports: [
+        FormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        CommonModule,
+    ],
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
   searchQuery: string = '';

@@ -10,11 +10,10 @@ interface mangaDisplay {
 }
 
 @Component({
-  selector: 'app-search-list-manga',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './search-list-manga.component.html',
-  styleUrls: ['./search-list-manga.component.scss']
+    selector: 'app-search-list-manga',
+    imports: [CommonModule],
+    templateUrl: './search-list-manga.component.html',
+    styleUrls: ['./search-list-manga.component.scss']
 })
 export class SearchListMangaComponent {
   mangaListDisplay: mangaDisplay[] = [];
