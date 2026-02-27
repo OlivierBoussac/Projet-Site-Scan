@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { LatestMangaAPIENService } from '../latest-manga-api-en.service';
@@ -12,7 +12,7 @@ interface mangaDisplay {
 @Component({
     selector: 'app-search-list-manga',
     standalone: true,
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './search-list-manga.component.html',
     styleUrls: ['./search-list-manga.component.scss']
 })

@@ -1,6 +1,8 @@
 <div class="manga-header">
   <div class="manga-cover">
-    <img *ngIf="mangaCover" [src]="mangaCover" alt="cover" />
+    @if (mangaCover) {
+      <img [src]="mangaCover" alt="cover" />
+    }
   </div>
   <div class="manga-info">
     <h2 class="manga-title">{{ mangaName }}</h2>
@@ -9,27 +11,41 @@
 </div>
 
 <div class="chapter-list">
-    <h2>Liste des chapitres</h2>
-    <table>
-        <thead>
-            <tr>
-                <th *ngIf="chaptersEN.length !== 0">Chapitre en anglais</th>
-                <th *ngIf="chaptersFR.length !== 0">Chapitre en français</th>
-            </tr>
-        </thead>
-        <tbody class="chapter-body">
-            <tr *ngIf="chaptersEN.length !== 0 || chaptersFR.length !== 0">
-                <td *ngIf="chaptersEN.length !== 0" class="chapter-column">
-                    <div *ngFor="let item of chaptersEN" class="chapter-row">
-                        <a (click)="onChapterClickEN(item)" class="chapter-link">Chapitre : {{ item.number }}</a>
-                    </div>
-                </td>
-                <td *ngIf="chaptersFR.length !== 0" class="chapter-column">
-                    <div *ngFor="let item of chaptersFR" class="chapter-row">
-                        <a (click)="onChapterClickFR(item)" class="chapter-link">Chapitre : {{ item.number }}</a>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+  <h2>Liste des chapitres</h2>
+  <table>
+    <thead>
+      <tr>
+        @if (chaptersEN.length !== 0) {
+          <th>Chapitre en anglais</th>
+        }
+        @if (chaptersFR.length !== 0) {
+          <th>Chapitre en français</th>
+        }
+      </tr>
+    </thead>
+    <tbody class="chapter-body">
+      @if (chaptersEN.length !== 0 || chaptersFR.length !== 0) {
+        <tr>
+          @if (chaptersEN.length !== 0) {
+            <td class="chapter-column">
+              @for (item of chaptersEN; track item) {
+                <div class="chapter-row">
+                  <a (click)="onChapterClickEN(item)" class="chapter-link">Chapitre : {{ item.number }}</a>
+                </div>
+              }
+            </td>
+          }
+          @if (chaptersFR.length !== 0) {
+            <td class="chapter-column">
+              @for (item of chaptersFR; track item) {
+                <div class="chapter-row">
+                  <a (click)="onChapterClickFR(item)" class="chapter-link">Chapitre : {{ item.number }}</a>
+                </div>
+              }
+            </td>
+          }
+        </tr>
+      }
+    </tbody>
+  </table>
 </div>

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { LatestMangaAPIENService } from '../latest-manga-api-en.service';
@@ -13,7 +13,7 @@ interface chapterDisplay {
     templateUrl: './affichage-chapitre.component.html',
     styleUrls: ['./affichage-chapitre.component.scss'],
     standalone: true,
-    imports: [CommonModule]
+    imports: []
 })
 
 export class AffichageChapitreComponent implements OnInit {

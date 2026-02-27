@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
@@ -9,12 +9,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     selector: 'app-header',
     standalone: true,
     imports: [
-        FormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        CommonModule,
-    ],
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
+],
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss']
 })

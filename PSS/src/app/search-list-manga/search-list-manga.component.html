@@ -2,9 +2,11 @@
 <div class="search-list-container">
   <h2 class="title">Liste des Mangas</h2>
   <div class="manga-list-grid">
-    <div *ngFor="let item of mangaListDisplay" class="manga-card" (click)="onMangaClick(item.id)">
-      <img [src]="item.coverUrl || 'assets/placeholder-manga.png'" [alt]="item.name" />
-      <div class="manga-title">{{ item.name }}</div>
-    </div>
+    @for (item of mangaListDisplay; track item) {
+      <div class="manga-card" (click)="onMangaClick(item.id)">
+        <img [src]="item.coverUrl || 'assets/placeholder-manga.png'" [alt]="item.name" />
+        <div class="manga-title">{{ item.name }}</div>
+      </div>
+    }
   </div>
 </div>

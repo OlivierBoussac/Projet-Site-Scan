@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
@@ -14,7 +14,7 @@ interface chapterDisplay {
     templateUrl: './affichage-list-chapitre.component.html',
     styleUrls: ['./affichage-list-chapitre.component.scss'],
     standalone: true,
-    imports: [CommonModule]
+    imports: []
 })
 export class AffichageListChapitreComponent implements OnInit {
   chaptersEN: chapterDisplay[] = [];
