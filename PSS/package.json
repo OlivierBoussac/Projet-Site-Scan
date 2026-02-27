@@ -38,7 +38,7 @@
     "@types/node": "^18.18.0",
     "@types/webidl-conversions": "^7.0.3",
     "@types/whatwg-url": "^13.0.0",
-    "angular-cli-ghpages": "^2.0.3",
+    "angular-cli-ghpages": "^3.0.2",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
