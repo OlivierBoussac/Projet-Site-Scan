@@ -8,6 +8,13 @@
     max-width: 900px;
 }
 
+.top-actions {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
 .display-button {
     background: linear-gradient(90deg, #4CAF50 0%, #2196F3 100%);
     border: none;
@@ -15,8 +22,6 @@
     padding: 12px 28px;
     font-size: 18px;
     border-radius: 8px;
-    margin-bottom: 24px;
-    margin-top: 0;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -27,6 +32,30 @@
 
 .display-button:hover {
     background: linear-gradient(90deg, #2196F3 0%, #4CAF50 100%);
+}
+
+.subscribe-btn {
+    background: linear-gradient(90deg, #ff9800 0%, #f44336 100%);
+    border: none;
+    color: #fff;
+    padding: 12px 28px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(255,152,0,0.15);
+    transition: background 0.2s, transform 0.1s;
+}
+
+.subscribe-btn:hover {
+    background: linear-gradient(90deg, #f44336 0%, #ff9800 100%);
+    transform: scale(1.02);
+}
+
+.subscribe-btn:active {
+    transform: scale(0.98);
 }
 
 .chapter-navigation {

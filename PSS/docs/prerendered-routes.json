@@ -1,6 +1,6 @@
 {
-  "routes": [
-    "/home",
-    "/lastUpdated"
-  ]
+  "routes": {
+    "/PSS/home": {},
+    "/PSS/lastUpdated": {}
+  }
 }

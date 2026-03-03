@@ -1,0 +1,89 @@
+@PSS_Backend_HostAddress = http://localhost:5150
+
+### ========== USERS ==========
+
+### Lister tous les users
+GET {{PSS_Backend_HostAddress}}/api/users
+Accept: application/json
+
+###
+
+### Récupérer un user par ID
+GET {{PSS_Backend_HostAddress}}/api/users/1
+Accept: application/json
+
+###
+
+### Créer un user
+POST {{PSS_Backend_HostAddress}}/api/users
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "motdepasse123"
+}
+
+###
+
+### Modifier un user
+PUT {{PSS_Backend_HostAddress}}/api/users/1
+Content-Type: application/json
+
+{
+  "email": "nouveau@example.com"
+}
+
+###
+
+### Supprimer un user
+DELETE {{PSS_Backend_HostAddress}}/api/users/1
+
+###
+
+### ========== SUBS ==========
+
+### Lister toutes les subs
+GET {{PSS_Backend_HostAddress}}/api/subs
+Accept: application/json
+
+###
+
+### Récupérer les subs d'un user
+GET {{PSS_Backend_HostAddress}}/api/subs/user/1
+Accept: application/json
+
+###
+
+### Récupérer une sub par ID
+GET {{PSS_Backend_HostAddress}}/api/subs/1
+Accept: application/json
+
+###
+
+### Créer une sub
+POST {{PSS_Backend_HostAddress}}/api/subs
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "idManga": "manga-123",
+  "nameManga": "One Piece",
+  "lastChapterRead": "1100"
+}
+
+###
+
+### Modifier une sub
+PUT {{PSS_Backend_HostAddress}}/api/subs/1
+Content-Type: application/json
+
+{
+  "lastChapterRead": "1101"
+}
+
+###
+
+### Supprimer une sub
+DELETE {{PSS_Backend_HostAddress}}/api/subs/1
+
+###

@@ -2,15 +2,62 @@
     <nav>
       <ul class="nav-list">
         <li class="nav-item">
-          <a (click)="onClickGoHome()" routerLink="/home" class="nav-link">Accueil</a>
+          <a routerLink="/home" class="nav-link">Accueil</a>
         </li>
         <li class="nav-item">
-          <a (click)="onClickGoLastUpdated()" routerLink="/lastUpdated" class="nav-link">Dernières mises à jour</a>
+          <a routerLink="/lastUpdated" class="nav-link">Dernières mises à jour</a>
         </li>
         <li class="nav-item search-item">
           <input class="search-input" type="text" [(ngModel)]="searchQuery" (keyup.enter)="onMangaKeyUp()" placeholder="Entrez un titre...">
         </li>
+        
+        <!-- Section Connexion -->
+        <li class="nav-item auth-section">
+          @if (!authService.isLoggedIn) {
+            <button class="auth-btn login-btn" (click)="toggleLoginForm()">Connexion</button>
+            <button class="auth-btn register-btn" (click)="toggleRegisterForm()">Inscription</button>
+          } @else {
+            <a routerLink="/mes-abonnements" class="nav-link">
+              Mes Abonnements
+            </a>
+            <span class="user-email">{{ authService.currentUser?.email }}</span>
+            <button class="auth-btn logout-btn" (click)="onLogout()">Déconnexion</button>
+          }
+        </li>
       </ul>
     </nav>
+    
+    <!-- Formulaire de connexion -->
+    @if (showLoginForm) {
+      <div class="auth-form-container">
+        <div class="auth-form">
+          <h3>Connexion</h3>
+          @if (errorMessage) {
+            <div class="error-message">{{ errorMessage }}</div>
+          }
+          <input type="email" [(ngModel)]="loginEmail" placeholder="Email" class="auth-input">
+          <input type="password" [(ngModel)]="loginPassword" placeholder="Mot de passe" class="auth-input" (keyup.enter)="onLogin()">
+          <button class="auth-submit-btn" (click)="onLogin()">Se connecter</button>
+          <button class="auth-cancel-btn" (click)="toggleLoginForm()">Annuler</button>
+        </div>
+      </div>
+    }
+    
+    <!-- Formulaire d'inscription -->
+    @if (showRegisterForm) {
+      <div class="auth-form-container">
+        <div class="auth-form">
+          <h3>Inscription</h3>
+          @if (errorMessage) {
+            <div class="error-message">{{ errorMessage }}</div>
+          }
+          <input type="email" [(ngModel)]="registerEmail" placeholder="Email" class="auth-input">
+          <input type="password" [(ngModel)]="registerPassword" placeholder="Mot de passe" class="auth-input">
+          <input type="password" [(ngModel)]="registerPasswordConfirm" placeholder="Confirmer le mot de passe" class="auth-input" (keyup.enter)="onRegister()">
+          <button class="auth-submit-btn" (click)="onRegister()">S'inscrire</button>
+          <button class="auth-cancel-btn" (click)="toggleRegisterForm()">Annuler</button>
+        </div>
+      </div>
+    }
   </header>
   

@@ -1,8 +1,11 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { LatestMangaAPIENService } from '../latest-manga-api-en.service';
+import { SubService, CreateSub } from '../services/sub.service';
+import { AuthService } from '../services/auth.service';
+import { Subscription } from 'rxjs';
 
 interface chapterDisplay {
   id: string;
@@ -16,25 +19,79 @@ interface chapterDisplay {
     standalone: true,
     imports: []
 })
-export class AffichageListChapitreComponent implements OnInit {
+export class AffichageListChapitreComponent implements OnInit, OnDestroy {
   chaptersEN: chapterDisplay[] = [];
   chaptersFR: chapterDisplay[] = [];
   id: string = "";
   mangaName: string = '';
   mangaDescription: string = '';
   mangaCover: string = '';
+  isSubscribed: boolean = false;
+  currentSubscriptionId: number | null = null;
+  private userSubscription?: Subscription;
+  private routeSubscription?: Subscription;
 
   constructor(
     private latestMangaAPIENService: LatestMangaAPIENService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private subService: SubService,
+    public authService: AuthService
   ) {}
 
   ngOnInit(): void {
-    this.id += this.route.snapshot.paramMap.get('id');
-    this.loadMangaInfo();
-    this.loadChapterListEN();
-    this.loadChapterListFR();
+    // S'abonner aux changements d'utilisateur pour mettre à jour l'état d'abonnement
+    this.userSubscription = this.authService.currentUser$.subscribe(user => {
+      if (user && this.id) {
+        this.checkSubscription();
+      } else if (!user) {
+        this.isSubscribed = false;
+        this.currentSubscriptionId = null;
+      }
+    });
+
+    // S'abonner aux changements de paramètres de route
+    this.routeSubscription = this.route.paramMap.subscribe(params => {
+      this.id = params.get('id') || '';
+      this.resetData();
+      this.loadMangaInfo();
+      this.loadChapterListEN();
+      this.loadChapterListFR();
+      // Vérifier l'abonnement après avoir défini l'ID
+      if (this.authService.isLoggedIn) {
+        this.checkSubscription();
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.userSubscription?.unsubscribe();
+    this.routeSubscription?.unsubscribe();
+  }
+
+  resetData(): void {
+    this.chaptersEN = [];
+    this.chaptersFR = [];
+    this.mangaName = '';
+    this.mangaDescription = '';
+    this.mangaCover = '';
+    this.isSubscribed = false;
+    this.currentSubscriptionId = null;
+  }
+
+  checkSubscription(): void {
+    if (this.authService.isLoggedIn && this.authService.currentUser) {
+      this.subService.getByUserAndManga(this.authService.currentUser.id, this.id).subscribe({
+        next: (sub) => {
+          this.isSubscribed = true;
+          this.currentSubscriptionId = sub.id;
+        },
+        error: () => {
+          this.isSubscribed = false;
+          this.currentSubscriptionId = null;
+        }
+      });
+    }
   }
 
   loadMangaInfo(): void {
@@ -97,5 +154,48 @@ export class AffichageListChapitreComponent implements OnInit {
 
   onChapterClickFR(item: chapterDisplay) {
     this.router.navigate(['chapterJPG', "fr", this.id, item.number, item.id]);
+  }
+
+  onSubscribe(): void {
+    if (!this.authService.isLoggedIn) {
+      return;
+    }
+
+    const subscription: CreateSub = {
+      userId: this.authService.currentUser!.id,
+      idManga: this.id,
+      nameManga: this.mangaName || 'Manga',
+      lastChapterRead: '0'
+    };
+
+    this.subService.create(subscription).subscribe({
+      next: (result) => {
+        console.log('Abonnement créé:', result);
+        this.isSubscribed = true;
+        this.currentSubscriptionId = result.id;
+      },
+      error: (error) => {
+        console.error('Erreur lors de l\'abonnement:', error);
+        alert('Erreur lors de l\'abonnement');
+      }
+    });
+  }
+
+  onUnsubscribe(): void {
+    if (!this.currentSubscriptionId) {
+      return;
+    }
+
+    this.subService.delete(this.currentSubscriptionId).subscribe({
+      next: () => {
+        console.log('Abonnement supprimé');
+        this.isSubscribed = false;
+        this.currentSubscriptionId = null;
+      },
+      error: (error) => {
+        console.error('Erreur lors de la suppression:', error);
+        alert('Erreur lors de la suppression de l\'abonnement');
+      }
+    });
   }
 }

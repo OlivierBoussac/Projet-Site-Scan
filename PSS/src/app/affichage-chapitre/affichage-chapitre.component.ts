@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { LatestMangaAPIENService } from '../latest-manga-api-en.service';
+import { CommonModule } from '@angular/common';
 
 interface chapterDisplay {
   id: string;
@@ -13,7 +14,7 @@ interface chapterDisplay {
     templateUrl: './affichage-chapitre.component.html',
     styleUrls: ['./affichage-chapitre.component.scss'],
     standalone: true,
-    imports: []
+    imports: [CommonModule]
 })
 
 export class AffichageChapitreComponent implements OnInit {
@@ -26,6 +27,7 @@ export class AffichageChapitreComponent implements OnInit {
   numberChap: string = "";
   idChap: string = "";
   idManga: string = "";
+  mangaName: string = "";
   langue: string = "";
   indexPage : number = 0;
   indexChap : string = "";

@@ -1,0 +1,31 @@
+<div class="subscriptions-container">
+  <h2 class="title">Mes Abonnements</h2>
+  
+  @if (!authService.isLoggedIn) {
+    <div class="not-logged-in">
+      <span class="material-icons">login</span>
+      <p>Vous devez être connecté pour voir vos abonnements.</p>
+    </div>
+  } @else if (isLoading) {
+    <div class="loading">
+      <span class="material-icons spinning">sync</span>
+      <p>Chargement...</p>
+    </div>
+  } @else if (subscriptions.length === 0) {
+    <div class="no-subscriptions">
+      <span class="material-icons">bookmark_border</span>
+      <p>Vous n'avez aucun abonnement pour le moment.</p>
+      <p class="hint">Parcourez les mangas et cliquez sur "S'abonner" pour en ajouter !</p>
+    </div>
+  } @else {
+    <div class="manga-list-grid">
+      @for (item of subscriptions; track item.id) {
+        <div class="manga-card" (click)="onMangaClick(item.idManga)">
+          <img [src]="item.coverUrl || 'assets/placeholder-manga.png'" [alt]="item.nameManga" />
+          <div class="manga-title">{{ item.nameManga }}</div>
+          <div class="last-chapter">Dernier chapitre lu: {{ item.lastChapterRead }}</div>
+        </div>
+      }
+    </div>
+  }
+</div>

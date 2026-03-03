@@ -7,6 +7,17 @@
   <div class="manga-info">
     <h2 class="manga-title">{{ mangaName }}</h2>
     <div class="manga-description">{{ mangaDescription }}</div>
+    @if (authService.isLoggedIn) {
+      @if (isSubscribed) {
+        <button class="subscribe-btn unsubscribe" (click)="onUnsubscribe()">
+          <span class="material-icons">bookmark_remove</span> Se désabonner
+        </button>
+      } @else {
+        <button class="subscribe-btn" (click)="onSubscribe()">
+          <span class="material-icons">bookmark_add</span> S'abonner
+        </button>
+      }
+    }
   </div>
 </div>
 

@@ -160,6 +160,26 @@ body {
   font-size: 0.95rem;
 }
 
+.subscribe-btn {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.subscribe-btn:hover {
+  background: #66bb6a;
+  transform: scale(1.05);
+}
+.subscribe-btn:active {
+  background: #388e3c;
+}
+
 .sidebar {
   flex: 1;
   background: #2c313a;

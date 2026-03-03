@@ -51,3 +51,162 @@ header nav ul li a {
 .example-full-width {
   width: 100%;
 }
+
+// Section authentification
+.auth-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.auth-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.login-btn {
+  background: #4caf50;
+  color: white;
+}
+
+.login-btn:hover {
+  background: #66bb6a;
+}
+
+.register-btn {
+  background: #2196f3;
+  color: white;
+}
+
+.register-btn:hover {
+  background: #42a5f5;
+}
+
+.logout-btn {
+  background: #f44336;
+  color: white;
+}
+
+.logout-btn:hover {
+  background: #ef5350;
+}
+
+.user-email {
+  color: #ffe082;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.subscriptions-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 6px;
+  color: white !important;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 0.2s, box-shadow 0.2s;
+  
+  .material-icons {
+    font-size: 18px;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+}
+
+// Formulaire de connexion
+.auth-form-container {
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  background: #2c313a;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  min-width: 280px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  h3 {
+    color: #fff;
+    margin: 0 0 10px 0;
+    text-align: center;
+  }
+}
+
+.auth-input {
+  padding: 10px 12px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #1e1e1e;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: #4caf50;
+  }
+
+  &::placeholder {
+    color: #888;
+  }
+}
+
+.auth-submit-btn {
+  padding: 10px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #66bb6a;
+  }
+}
+
+.auth-cancel-btn {
+  padding: 10px;
+  background: transparent;
+  color: #888;
+  border: 1px solid #444;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: #444;
+    color: #fff;
+  }
+}
+
+.error-message {
+  background: #f44336;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  text-align: center;
+}

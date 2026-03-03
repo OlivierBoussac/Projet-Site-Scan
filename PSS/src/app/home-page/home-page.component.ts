@@ -24,7 +24,10 @@ export class HomePageComponent implements OnInit {
   mangaListDisplayLastUpdated: mangaDisplay[] = [];
   mangaListDisplayPopular: mangaDisplay[] = [];
 
-  constructor(private latestMangaAPIENService: LatestMangaAPIENService, private router: Router) { }
+  constructor(
+    private latestMangaAPIENService: LatestMangaAPIENService, 
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.loadMangaList();
