@@ -7,6 +7,11 @@
         <li class="nav-item">
           <a routerLink="/lastUpdated" class="nav-link">Dernières mises à jour</a>
         </li>
+        <li class="nav-item">
+          <a routerLink="/recommandations" class="nav-link ai-link">
+            <span class="material-icons">psychology</span> IA
+          </a>
+        </li>
         <li class="nav-item search-item">
           <input class="search-input" type="text" [(ngModel)]="searchQuery" (keyup.enter)="onMangaKeyUp()" placeholder="Entrez un titre...">
         </li>

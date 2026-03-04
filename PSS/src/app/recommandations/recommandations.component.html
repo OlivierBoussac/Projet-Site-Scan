@@ -1,0 +1,61 @@
+<div class="recommendations-container">
+  <h2 class="title">
+    <span class="material-icons">psychology</span>
+    Recommandations IA
+  </h2>
+  
+  <div class="search-section">
+    <p class="description">
+      Décrivez le type de manga que vous recherchez et notre IA vous proposera 15 recommandations personnalisées.
+    </p>
+    
+    <div class="input-wrapper">
+      <textarea 
+        class="description-input" 
+        [(ngModel)]="description" 
+        placeholder="Ex: Je cherche un manga d'action avec un héros qui devient très puissant, des combats épiques et un bon développement des personnages..."
+        rows="4"
+        [disabled]="isLoading"
+      ></textarea>
+      
+      <button 
+        class="search-btn" 
+        (click)="onSearch()" 
+        [disabled]="isLoading || !description.trim()">
+        @if (isLoading) {
+          <span class="material-icons spinning">sync</span>
+          Recherche en cours...
+        } @else {
+          <span class="material-icons">auto_awesome</span>
+          Obtenir des recommandations
+        }
+      </button>
+    </div>
+  </div>
+
+  @if (errorMessage) {
+    <div class="error-message">
+      <span class="material-icons">error</span>
+      {{ errorMessage }}
+    </div>
+  }
+
+  @if (recommendations.length > 0) {
+    <div class="results-section">
+      <h3 class="results-title">
+        <span class="material-icons">recommend</span>
+        {{ recommendations.length }} mangas recommandés
+      </h3>
+      
+      <div class="manga-grid">
+        @for (manga of recommendations; track manga; let i = $index) {
+          <div class="manga-recommendation-card" (click)="onMangaClick(manga)">
+            <span class="manga-number">{{ i + 1 }}</span>
+            <span class="manga-name">{{ manga }}</span>
+            <span class="material-icons search-icon">search</span>
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>
