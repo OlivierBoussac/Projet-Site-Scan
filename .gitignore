@@ -18,4 +18,3 @@ Thumbs.db
 # Environment files with secrets
 appsettings.*.json
 !appsettings.json
-!appsettings.Development.json
