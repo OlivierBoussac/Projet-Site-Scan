@@ -7,13 +7,13 @@
   </div>
 
   <div class="chapter-navigation">
-    @if (numberChap !== '1') {
+    @if (hasPreviousChapter) {
       <button (click)="chapPrecedent()">
         <span class="material-icons">arrow_back</span> Chapitre Précédent
       </button>
     }
     <span class="chapter-info">Chapitre {{ numberChap }} / {{ chapMax }}</span>
-    @if (numberChap !== chapMax) {
+    @if (hasNextChapter) {
       <button (click)="chapSuivant()">
         Chapitre Suivant <span class="material-icons">arrow_forward</span>
       </button>

@@ -36,6 +36,16 @@ export class AffichageChapitreComponent implements OnInit {
   listURL: string[] = [];
   allDisplay: boolean = false
 
+  get hasPreviousChapter(): boolean {
+    const currentIndex = this.chapters.findIndex(ch => ch.number === this.numberChap);
+    return currentIndex > 0;
+  }
+
+  get hasNextChapter(): boolean {
+    const currentIndex = this.chapters.findIndex(ch => ch.number === this.numberChap);
+    return currentIndex >= 0 && currentIndex < this.chapters.length - 1;
+  }
+
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.numberChap = params.get('numberChap') || '';
@@ -114,11 +124,19 @@ export class AffichageChapitreComponent implements OnInit {
   }
 
   chapSuivant() {
-    this.router.navigate([ 'chapterJPG', this.langue, this.idManga, (parseInt(this.numberChap)+1).toString(), (this.chapters[parseInt(this.numberChap)+1]).id]);
+    const currentIndex = this.chapters.findIndex(ch => ch.number === this.numberChap);
+    if (currentIndex < this.chapters.length - 1) {
+      const nextChapter = this.chapters[currentIndex + 1];
+      this.router.navigate(['chapterJPG', this.langue, this.idManga, nextChapter.number, nextChapter.id]);
+    }
   }
 
   chapPrecedent() {
-    this.router.navigate(['chapterJPG', this.langue, this.idManga, (parseInt(this.numberChap)-1).toString(), (this.chapters[parseInt(this.numberChap)-1]).id]);  
+    const currentIndex = this.chapters.findIndex(ch => ch.number === this.numberChap);
+    if (currentIndex > 0) {
+      const prevChapter = this.chapters[currentIndex - 1];
+      this.router.navigate(['chapterJPG', this.langue, this.idManga, prevChapter.number, prevChapter.id]);
+    }
   }
 
   changeDisplay() {
