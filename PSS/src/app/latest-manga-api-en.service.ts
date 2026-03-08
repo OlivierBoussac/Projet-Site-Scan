@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, forkJoin } from 'rxjs';
 import { catchError, map, shareReplay, switchMap } from 'rxjs/operators';
+import { environment } from '../environments/environment';
 
 interface MangaApiResponse {
   data: any[];
@@ -12,7 +13,8 @@ interface MangaApiResponse {
   providedIn: 'root'
 })
 export class LatestMangaAPIENService {
-  baseUrl = 'https://api.mangadex.org';
+  baseUrl = environment.mangadexUrl;
+  uploadsUrl = environment.mangadexUploadsUrl;
 
   private lastMangaCache$?: Observable<any[]>;
 
@@ -35,7 +37,7 @@ export class LatestMangaAPIENService {
                 return this.http.get<any>(`${this.baseUrl}/cover/${coverRel.id}`).pipe(
                   map(coverRes => {
                     const fileName = coverRes?.data?.attributes?.fileName;
-                    const coverUrl = fileName ? `https://uploads.mangadex.org/covers/${manga.id}/${fileName}` : '';
+                    const coverUrl = fileName ? `${this.uploadsUrl}/covers/${manga.id}/${fileName}` : '';
                     return { ...manga, coverUrl };
                   }),
                   catchError(() => of({ ...manga, coverUrl: '' }))
@@ -59,7 +61,7 @@ export class LatestMangaAPIENService {
   getPopularManga(): Observable<any[]> {
     return this.http
       .get<MangaApiResponse>(
-        `${this.baseUrl}/manga?limit=20&availableTranslatedLanguage[]=en&contentRating[]=safe&order[followedCount]=desc&includes[]=cover_art`
+        `${this.baseUrl}/manga?limit=100&availableTranslatedLanguage[]=en&contentRating[]=safe&order[followedCount]=desc&includes[]=cover_art`
       )
       .pipe(
         switchMap(res => {
@@ -70,7 +72,7 @@ export class LatestMangaAPIENService {
               return this.http.get<any>(`${this.baseUrl}/cover/${coverRel.id}`).pipe(
                 map(coverRes => {
                   const fileName = coverRes?.data?.attributes?.fileName;
-                  const coverUrl = fileName ? `https://uploads.mangadex.org/covers/${manga.id}/${fileName}` : '';
+                  const coverUrl = fileName ? `${this.uploadsUrl}/covers/${manga.id}/${fileName}` : '';
                   return { ...manga, coverUrl };
                 }),
                 catchError(() => of({ ...manga, coverUrl: '' }))
@@ -118,7 +120,7 @@ export class LatestMangaAPIENService {
               return this.http.get<any>(`${this.baseUrl}/cover/${coverRel.id}`).pipe(
                 map(coverRes => {
                   const fileName = coverRes?.data?.attributes?.fileName;
-                  const coverUrl = fileName ? `https://uploads.mangadex.org/covers/${manga.id}/${fileName}` : '';
+                  const coverUrl = fileName ? `${this.uploadsUrl}/covers/${manga.id}/${fileName}` : '';
                   return { ...manga, coverUrl };
                 }),
                 catchError(() => of({ ...manga, coverUrl: '' }))

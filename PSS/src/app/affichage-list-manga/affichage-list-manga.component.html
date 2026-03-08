@@ -3,7 +3,7 @@
   <div class="featured-section">
     <h2 class="section-title">Featured Manga</h2>
     <div class="featured-manga-grid">
-      @for (item of mangaListDisplayLastUpdated | slice:0:12; track item) {
+      @for (item of mangaListDisplayLastUpdated | slice:0:20; track item) {
         <div class="featured-manga-card" (click)="onMangaClick(item.id)">
           <img [src]="item.coverUrl || 'assets/placeholder-manga.png'" alt="{{ item.name }}" />
           <div class="featured-manga-title">{{ item.name }}</div>
@@ -18,7 +18,7 @@
   <div class="sidebar">
     <h3 class="sidebar-title">Popular Manga</h3>
     <ul class="popular-manga-list">
-      @for (item of mangaListDisplayPopular | slice:0:10; track item) {
+      @for (item of mangaListDisplayPopular | slice:0:100; track item) {
         <li (click)="onMangaClick(item.id)">
           <span class="popular-manga-name">{{ item.name }}</span>
           @if (item.lastChapter) {

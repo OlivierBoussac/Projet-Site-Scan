@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { SubService, Sub } from '../services/sub.service';
 import { AuthService } from '../services/auth.service';
 import { CommonModule } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 interface SubscriptionDisplay extends Sub {
   coverUrl?: string;
@@ -55,7 +56,7 @@ export class MesAbonnementsComponent implements OnInit, OnDestroy {
       next: (subs) => {
         this.subscriptions = subs.map(sub => ({
           ...sub,
-          coverUrl: `https://uploads.mangadex.org/covers/${sub.idManga}/.256.jpg`
+          coverUrl: `${environment.mangadexUploadsUrl}/covers/${sub.idManga}/.256.jpg`
         }));
         // Charger les covers pour chaque manga
         this.loadCovers();
@@ -72,13 +73,13 @@ export class MesAbonnementsComponent implements OnInit, OnDestroy {
   loadCovers(): void {
     // Pour chaque abonnement, récupérer la cover du manga
     this.subscriptions.forEach((sub, index) => {
-      fetch(`https://api.mangadex.org/manga/${sub.idManga}?includes[]=cover_art`)
+      fetch(`${environment.mangadexUrl}/manga/${sub.idManga}?includes[]=cover_art`)
         .then(res => res.json())
         .then(data => {
           const coverRel = data?.data?.relationships?.find((r: any) => r.type === 'cover_art');
           const fileName = coverRel?.attributes?.fileName;
           if (fileName) {
-            this.subscriptions[index].coverUrl = `https://uploads.mangadex.org/covers/${sub.idManga}/${fileName}.256.jpg`;
+            this.subscriptions[index].coverUrl = `${environment.mangadexUploadsUrl}/covers/${sub.idManga}/${fileName}.256.jpg`;
           }
         })
         .catch(err => console.error('Erreur cover:', err));

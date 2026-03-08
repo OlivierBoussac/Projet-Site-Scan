@@ -1,11 +1,15 @@
+:host {
+  display: block;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
 .chapter-card {
-    background: #fff;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    background: #23272f;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
     border-radius: 16px;
-    padding: 32px 24px;
-    margin: 40px auto;
-    max-width: 900px;
+    padding: 2rem;
 }
 
 .top-actions {
@@ -16,83 +20,69 @@
 }
 
 .display-button {
-    background: linear-gradient(90deg, #4CAF50 0%, #2196F3 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border: none;
     color: #fff;
     padding: 12px 28px;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 2px 8px rgba(76,175,80,0.15);
-    transition: background 0.2s;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
 }
 
 .display-button:hover {
-    background: linear-gradient(90deg, #2196F3 0%, #4CAF50 100%);
-}
-
-.subscribe-btn {
-    background: linear-gradient(90deg, #ff9800 0%, #f44336 100%);
-    border: none;
-    color: #fff;
-    padding: 12px 28px;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 2px 8px rgba(255,152,0,0.15);
-    transition: background 0.2s, transform 0.1s;
-}
-
-.subscribe-btn:hover {
-    background: linear-gradient(90deg, #f44336 0%, #ff9800 100%);
-    transform: scale(1.02);
-}
-
-.subscribe-btn:active {
-    transform: scale(0.98);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
 }
 
 .chapter-navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+    padding: 1rem;
+    background: #2c313a;
+    border-radius: 12px;
 }
 
 .chapter-navigation button {
-    background-color: #2196F3;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border: none;
     color: #fff;
     padding: 10px 22px;
     font-size: 16px;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 6px;
-    box-shadow: 0 2px 8px rgba(33,150,243,0.12);
-    transition: background 0.2s;
-}
-
-.chapter-navigation button:hover {
-    background-color: #1976D2;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+    }
+    
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      transform: none;
+    }
 }
 
 .chapter-info {
     font-weight: 600;
     font-size: 18px;
-    color: #333;
+    color: #fff;
 }
 
 .image-container {
-    margin-bottom: 40px;
-    margin-top: 0;
+    margin-bottom: 2rem;
 }
 
 .image-wrapper {
@@ -106,7 +96,7 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
 
 .page-navigation {
@@ -114,31 +104,41 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 24px;
+    padding: 1rem;
+    background: #2c313a;
+    border-radius: 12px;
 }
 
 .page-navigation button {
-    background-color: #4CAF50;
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
     border: none;
     color: #fff;
     padding: 10px 22px;
     font-size: 16px;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 6px;
-    box-shadow: 0 2px 8px rgba(76,175,80,0.12);
-    transition: background 0.2s;
-}
-
-.page-navigation button:hover {
-    background-color: #388E3C;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(39, 174, 96, 0.4);
+    }
+    
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      transform: none;
+    }
 }
 
 .page-info {
     font-weight: 500;
     font-size: 16px;
-    color: #555;
+    color: #b0b0b0;
 }
 
 .material-icons {
@@ -155,51 +155,103 @@
     -webkit-font-smoothing: antialiased;
 }
 
-.image-container {
-    margin-bottom: 100px;
-    margin-top: 100px;
-}
-
-.image-wrapper {
-    margin-bottom: 10px;
-}
-
-.image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .navigation-buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 24px;
+    padding: 1rem;
+    background: #2c313a;
+    border-radius: 12px;
 }
 
 .navigation-buttons button {
-    background-color: #4CAF50;
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
     border: none;
     color: white;
     padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(39, 174, 96, 0.4);
+    }
+    
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      transform: none;
+    }
 }
 
-.navigation-buttons button:hover {
-    background-color: #45a049;
+@media (max-width: 768px) {
+  :host {
+    padding: 1rem;
+  }
+  
+  .chapter-card {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .top-actions {
+    gap: 8px;
+  }
+  
+  .display-button {
+    padding: 10px 16px;
+    font-size: 14px;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .chapter-navigation,
+  .page-navigation,
+  .navigation-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    
+    button {
+      width: 100%;
+      justify-content: center;
+      padding: 12px;
+    }
+  }
+  
+  .chapter-info,
+  .page-info {
+    order: -1;
+    text-align: center;
+    font-size: 14px;
+  }
 }
 
-.chapter-buttons {
-    margin-top: 20px;
-}
-
-.chapter-buttons button:last-child {
-    margin-right: 0;
+@media (max-width: 480px) {
+  :host {
+    padding: 0.5rem;
+  }
+  
+  .chapter-card {
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+  
+  .chapter-navigation button,
+  .page-navigation button,
+  .navigation-buttons button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .image {
+    border-radius: 4px;
+  }
 }

@@ -1,10 +1,15 @@
-.recommendations-container {
+:host {
+  display: block;
+  padding: 2rem;
   max-width: 1000px;
-  margin: 40px auto 0 auto;
-  padding: 24px;
-  background: #fff;
+  margin: 0 auto;
+}
+
+.recommendations-container {
+  background: #23272f;
   border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  padding: 2rem;
   min-height: 500px;
 }
 
@@ -13,8 +18,8 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  font-size: 32px;
-  color: #667eea;
+  font-size: 2rem;
+  color: #fff;
   text-align: center;
   margin-bottom: 24px;
   margin-top: 0;
@@ -22,6 +27,7 @@
   
   .material-icons {
     font-size: 40px;
+    color: #667eea;
   }
 }
 
@@ -31,7 +37,7 @@
 
 .description {
   text-align: center;
-  color: #666;
+  color: #b0b0b0;
   font-size: 1.1rem;
   margin-bottom: 24px;
 }
@@ -47,12 +53,14 @@
 .description-input {
   width: 100%;
   padding: 16px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #3c424d;
   border-radius: 12px;
   font-size: 1rem;
   resize: vertical;
   transition: border-color 0.3s, box-shadow 0.3s;
   font-family: inherit;
+  background: #2c313a;
+  color: #fff;
   
   &:focus {
     outline: none;
@@ -61,8 +69,12 @@
   }
   
   &:disabled {
-    background: #f5f5f5;
+    background: #1a1d23;
     cursor: not-allowed;
+  }
+  
+  &::placeholder {
+    color: #888;
   }
 }
 
@@ -98,25 +110,17 @@
   }
 }
 
-.spinning {
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .error-message {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 16px;
-  background: #ffebee;
-  color: #c62828;
+  background: rgba(198, 40, 40, 0.2);
+  color: #ef5350;
   border-radius: 8px;
   margin-bottom: 24px;
+  border: 1px solid rgba(198, 40, 40, 0.3);
   
   .material-icons {
     font-size: 24px;
@@ -133,7 +137,7 @@
   justify-content: center;
   gap: 8px;
   font-size: 1.5rem;
-  color: #333;
+  color: #fff;
   margin-bottom: 24px;
   
   .material-icons {
@@ -193,4 +197,115 @@
   color: #667eea;
   opacity: 0;
   transition: opacity 0.3s;
+}
+
+@media (max-width: 768px) {
+  :host {
+    padding: 1rem;
+  }
+  
+  .recommendations-container {
+    padding: 1.5rem;
+    border-radius: 12px;
+    min-height: auto;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    gap: 8px;
+    
+    .material-icons {
+      font-size: 32px;
+    }
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .description-input {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+  
+  .search-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  .results-title {
+    font-size: 1.25rem;
+  }
+  
+  .manga-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .manga-recommendation-card {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  :host {
+    padding: 0.5rem;
+  }
+  
+  .recommendations-container {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 1.25rem;
+    flex-direction: column;
+    gap: 8px;
+    
+    .material-icons {
+      font-size: 28px;
+    }
+  }
+  
+  .description {
+    font-size: 0.9rem;
+  }
+  
+  .input-wrapper {
+    gap: 12px;
+  }
+  
+  .description-input {
+    padding: 10px;
+    min-height: 80px;
+  }
+  
+  .search-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+  
+  .manga-recommendation-card {
+    padding: 12px;
+    gap: 10px;
+    
+    &:hover {
+      transform: translateX(4px);
+    }
+  }
+  
+  .manga-number {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+  }
+  
+  .manga-name {
+    font-size: 0.95rem;
+  }
+  
+  .error-message {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
 }

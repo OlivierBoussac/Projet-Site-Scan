@@ -60,6 +60,11 @@ export class SubService {
     return this.http.put<Sub>(`${this.apiUrl}/${id}`, sub);
   }
 
+  // Mettre à jour le dernier chapitre lu
+  updateLastChapterRead(subscriptionId: number, chapterNumber: string): Observable<Sub> {
+    return this.http.put<Sub>(`${this.apiUrl}/${subscriptionId}`, { lastChapterRead: chapterNumber });
+  }
+
   // Supprimer une subscription
   delete(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);

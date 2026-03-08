@@ -1,4 +1,160 @@
-/* You can add global styles to this file, and also import other style files */
+/* Styles globaux */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  --header-height: 60px;
+  --footer-height: 40px;
+  --primary-color: #667eea;
+  --primary-dark: #764ba2;
+  --bg-dark: #1a1d23;
+  --bg-card: #23272f;
+  --text-light: #e0e0e0;
+  --text-muted: #b0b0b0;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+}
+
+/* Media query breakpoints référence:
+   - Mobile: < 576px
+   - Tablet: 576px - 768px  
+   - Desktop: > 768px
+   - Large: > 1024px
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body { 
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
+body { 
+  font-family: 'Segoe UI', Roboto, "Helvetica Neue", sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  min-height: 100vh;
+  padding-top: var(--header-height);
+  padding-bottom: var(--footer-height);
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Container principal pour toutes les pages */
+.page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  min-height: calc(100vh - var(--header-height) - var(--footer-height) - 4rem);
+}
+
+/* Titres de page communs */
+.page-title {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Cards communes */
+.content-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  padding: var(--spacing-lg);
+}
+
+/* Grilles de manga communes */
+.manga-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Animation de chargement */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+/* ========== RESPONSIVE GLOBAL ========== */
+
+/* Tablette */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 56px;
+    --spacing-lg: 1.5rem;
+  }
+  
+  .page-container {
+    padding: var(--spacing-sm);
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+  }
+  
+  .content-card {
+    padding: var(--spacing-sm);
+    border-radius: 12px;
+  }
+  
+  .manga-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: var(--spacing-sm);
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  :root {
+    --header-height: 56px;
+    --footer-height: 50px;
+    --spacing-lg: 1rem;
+    --spacing-md: 0.75rem;
+  }
+  
+  .page-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .manga-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+/* Très petit écran */
+@media (max-width: 360px) {
+  .manga-grid {
+    grid-template-columns: 1fr;
+  }
+}

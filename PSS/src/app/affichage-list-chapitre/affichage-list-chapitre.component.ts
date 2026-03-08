@@ -6,6 +6,7 @@ import { LatestMangaAPIENService } from '../latest-manga-api-en.service';
 import { SubService, CreateSub } from '../services/sub.service';
 import { AuthService } from '../services/auth.service';
 import { Subscription } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 interface chapterDisplay {
   id: string;
@@ -28,6 +29,7 @@ export class AffichageListChapitreComponent implements OnInit, OnDestroy {
   mangaCover: string = '';
   isSubscribed: boolean = false;
   currentSubscriptionId: number | null = null;
+  lastChapterRead: string = '';
   private userSubscription?: Subscription;
   private routeSubscription?: Subscription;
 
@@ -77,6 +79,7 @@ export class AffichageListChapitreComponent implements OnInit, OnDestroy {
     this.mangaCover = '';
     this.isSubscribed = false;
     this.currentSubscriptionId = null;
+    this.lastChapterRead = '';
   }
 
   checkSubscription(): void {
@@ -85,10 +88,12 @@ export class AffichageListChapitreComponent implements OnInit, OnDestroy {
         next: (sub) => {
           this.isSubscribed = true;
           this.currentSubscriptionId = sub.id;
+          this.lastChapterRead = sub.lastChapterRead || '';
         },
         error: () => {
           this.isSubscribed = false;
           this.currentSubscriptionId = null;
+          this.lastChapterRead = '';
         }
       });
     }
@@ -105,7 +110,7 @@ export class AffichageListChapitreComponent implements OnInit, OnDestroy {
         const coverId = coverRel?.id;
         const fileName = coverRel?.attributes?.fileName;
         if (coverId && fileName) {
-          this.mangaCover = `https://uploads.mangadex.org/covers/${this.id}/${fileName}.256.jpg`;
+          this.mangaCover = `${environment.mangadexUploadsUrl}/covers/${this.id}/${fileName}.256.jpg`;
         }
       },
       (error: any) => {
@@ -191,11 +196,32 @@ export class AffichageListChapitreComponent implements OnInit, OnDestroy {
         console.log('Abonnement supprimé');
         this.isSubscribed = false;
         this.currentSubscriptionId = null;
+        this.lastChapterRead = '';
       },
       error: (error) => {
         console.error('Erreur lors de la suppression:', error);
         alert('Erreur lors de la suppression de l\'abonnement');
       }
     });
+  }
+
+  resumeReading(): void {
+    if (!this.lastChapterRead || this.lastChapterRead === '0') return;
+
+    // Chercher d'abord dans les chapitres EN, sinon FR
+    let chapter = this.chaptersEN.find(ch => ch.number === this.lastChapterRead);
+    if (chapter) {
+      this.router.navigate(['chapterJPG', 'en', this.id, chapter.number, chapter.id]);
+      return;
+    }
+
+    chapter = this.chaptersFR.find(ch => ch.number === this.lastChapterRead);
+    if (chapter) {
+      this.router.navigate(['chapterJPG', 'fr', this.id, chapter.number, chapter.id]);
+    }
+  }
+
+  get canResumeReading(): boolean {
+    return this.isSubscribed && !!this.lastChapterRead && this.lastChapterRead !== '0';
   }
 }

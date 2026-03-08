@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { LatestMangaAPIENService } from '../latest-manga-api-en.service';
 import { CommonModule } from '@angular/common';
+import { SubService } from '../services/sub.service';
+import { AuthService } from '../services/auth.service';
 
 interface chapterDisplay {
   id: string;
@@ -21,7 +23,9 @@ export class AffichageChapitreComponent implements OnInit {
   constructor(
     private latestMangaAPIENService: LatestMangaAPIENService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private subService: SubService,
+    private authService: AuthService
   ) {}
 
   numberChap: string = "";
@@ -55,7 +59,25 @@ export class AffichageChapitreComponent implements OnInit {
       this.loadChapterList();
       this.loadChapterJPG();
       this.initData();
+      this.saveLastChapterRead();
     });
+  }
+
+  saveLastChapterRead(): void {
+    if (this.authService.isLoggedIn && this.authService.currentUser) {
+      this.subService.getByUserAndManga(this.authService.currentUser.id, this.idManga).subscribe({
+        next: (sub) => {
+          // Mettre à jour le dernier chapitre lu
+          this.subService.updateLastChapterRead(sub.id, this.numberChap).subscribe({
+            next: () => console.log('Dernier chapitre lu mis à jour:', this.numberChap),
+            error: (err) => console.log('Erreur mise à jour chapitre:', err)
+          });
+        },
+        error: () => {
+          // L'utilisateur n'est pas abonné à ce manga, on ne fait rien
+        }
+      });
+    }
   }
 
   initData() {

@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --output-path docs --base-href /PSS/   ",
+    "build": "ng build --output-path docs --base-href /PSS/",
+    "build:prod": "ng build --configuration production --output-path dist/pss",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:PSS": "node dist/pss/server/server.mjs"

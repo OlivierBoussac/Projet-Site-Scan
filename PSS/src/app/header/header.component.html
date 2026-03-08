@@ -1,19 +1,29 @@
 <header class="header">
-    <nav>
+    <!-- Bouton menu mobile -->
+    <button class="mobile-menu-btn" (click)="toggleMobileMenu()" aria-label="Menu">
+      <span class="material-icons">{{ mobileMenuOpen ? 'close' : 'menu' }}</span>
+    </button>
+    
+    <!-- Logo/Titre mobile -->
+    <a routerLink="/home" class="mobile-logo">PSS</a>
+    
+    <!-- Overlay mobile -->
+    @if (mobileMenuOpen) {
+      <div class="mobile-overlay" (click)="closeMobileMenu()"></div>
+    }
+    
+    <nav [class.mobile-open]="mobileMenuOpen">
       <ul class="nav-list">
         <li class="nav-item">
-          <a routerLink="/home" class="nav-link">Accueil</a>
+          <a routerLink="/home" class="nav-link" (click)="closeMobileMenu()">Accueil</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/lastUpdated" class="nav-link">Dernières mises à jour</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/recommandations" class="nav-link ai-link">
+          <a routerLink="/recommandations" class="nav-link ai-link" (click)="closeMobileMenu()">
             <span class="material-icons">psychology</span> IA
           </a>
         </li>
         <li class="nav-item search-item">
-          <input class="search-input" type="text" [(ngModel)]="searchQuery" (keyup.enter)="onMangaKeyUp()" placeholder="Entrez un titre...">
+          <input class="search-input" type="text" [(ngModel)]="searchQuery" (keyup.enter)="onMangaKeyUp()" placeholder="Rechercher...">
         </li>
         
         <!-- Section Connexion -->
@@ -22,7 +32,7 @@
             <button class="auth-btn login-btn" (click)="toggleLoginForm()">Connexion</button>
             <button class="auth-btn register-btn" (click)="toggleRegisterForm()">Inscription</button>
           } @else {
-            <a routerLink="/mes-abonnements" class="nav-link">
+            <a routerLink="/mes-abonnements" class="nav-link" (click)="closeMobileMenu()">
               Mes Abonnements
             </a>
             <span class="user-email">{{ authService.currentUser?.email }}</span>

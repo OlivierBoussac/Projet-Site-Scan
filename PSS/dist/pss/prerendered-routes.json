@@ -1,6 +1,8 @@
 {
-  "routes": [
-    "/home",
-    "/lastUpdated"
-  ]
+  "routes": {
+    "/home": {},
+    "/lastUpdated": {},
+    "/mes-abonnements": {},
+    "/recommandations": {}
+  }
 }

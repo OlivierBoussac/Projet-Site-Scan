@@ -23,6 +23,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class HeaderComponent {
   searchQuery: string = '';
+  mobileMenuOpen: boolean = false;
   
   // Variables pour le formulaire de connexion
   showLoginForm: boolean = false;
@@ -36,8 +37,17 @@ export class HeaderComponent {
 
   constructor(private router: Router, public authService: AuthService) { }
 
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  closeMobileMenu(): void {
+    this.mobileMenuOpen = false;
+  }
+
   onMangaKeyUp() {
     this.router.navigate(['listMangaSearch', this.searchQuery]);
+    this.closeMobileMenu();
   }
 
   toggleLoginForm(): void {
@@ -100,5 +110,6 @@ export class HeaderComponent {
 
   onLogout(): void {
     this.authService.logout();
+    this.closeMobileMenu();
   }
 }

@@ -12,6 +12,11 @@
         <button class="subscribe-btn unsubscribe" (click)="onUnsubscribe()">
           <span class="material-icons">bookmark_remove</span> Se désabonner
         </button>
+        @if (canResumeReading) {
+          <button class="resume-btn" (click)="resumeReading()">
+            <span class="material-icons">play_arrow</span> Reprendre au chapitre {{ lastChapterRead }}
+          </button>
+        }
       } @else {
         <button class="subscribe-btn" (click)="onSubscribe()">
           <span class="material-icons">bookmark_add</span> S'abonner

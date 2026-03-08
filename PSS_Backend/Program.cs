@@ -18,7 +18,12 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngular", policy =>
     {
-        policy.WithOrigins("http://localhost:4200", "http://localhost:4000")
+        policy.WithOrigins(
+                  "http://localhost:4200", 
+                  "http://localhost:4000",
+                  "http://gbhome31.freeboxos.fr:2932",
+                  "https://gbhome31.freeboxos.fr:2932"
+              )
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
