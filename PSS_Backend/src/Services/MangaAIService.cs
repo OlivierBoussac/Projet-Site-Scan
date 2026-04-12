@@ -20,7 +20,7 @@ namespace PSS_Backend.src.Services
             }
             else
             {
-                _chatClient = new ChatClient("gpt-4o-mini", apiKey);
+                _chatClient = new ChatClient("gpt-4o", apiKey);
             }
         }
 
